@@ -1,34 +1,35 @@
-import React from 'react'
-import { useRoute } from '@react-navigation/native'
+import React from "react";
+import { useRoute } from "@react-navigation/native";
+import { SafeAreaView } from "react-native";
 
-import * as S from './styles'
+import * as S from "./styles";
 import {
   tabsRoutes,
   stacksMore,
   stacksHome,
   stacksCollege,
   stacksContent,
-  stacksMain
-} from 'Router/routes'
-import HeaderMenu from 'components/HeaderMenu'
-import HeaderDefault from 'components/HeaderDefault'
+  stacksMain,
+} from "Router/routes";
+import HeaderMenu from "components/HeaderMenu";
+import HeaderDefault from "components/HeaderDefault";
 
 export default function HeaderApp() {
-  const route = useRoute()
+  const route = useRoute();
 
   function returnHeaderCorrect() {
     switch (route.name) {
       case stacksHome.home:
-        return <HeaderMenu route={route} />
+        return <HeaderMenu route={route} />;
 
       case tabsRoutes.content.name:
-        return <HeaderDefault route={route} />
+        return <HeaderDefault route={route} />;
 
       case tabsRoutes.college.name:
-        return <HeaderDefault route={route} />
+        return <HeaderDefault route={route} />;
 
       case tabsRoutes.more.name:
-        return <HeaderDefault route={route} />
+        return <HeaderDefault route={route} />;
 
       case stacksMore.schedule:
       case stacksMore.ourPages:
@@ -40,12 +41,16 @@ export default function HeaderApp() {
       case stacksCollege.teste:
       case stacksContent.teste:
       case stacksMain.teste:
-        return <HeaderDefault route={route} showBackArrow />
+        return <HeaderDefault route={route} showBackArrow />;
 
       default:
-        return <HeaderDefault route={route} />
+        return <HeaderDefault route={route} />;
     }
   }
 
-  return <S.container>{returnHeaderCorrect()}</S.container>
+  return (
+    <SafeAreaView>
+      <S.container>{returnHeaderCorrect()}</S.container>
+    </SafeAreaView>
+  );
 }

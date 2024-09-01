@@ -81,6 +81,7 @@ export default function Tabs() {
           paddingTop: 5,
           borderColor: color.interface.backgroundColor,
           height: Dimensions.get("window").height * 0.07,
+          borderTopColor: color.interface.backgroundColor,
         },
         headerSafeAreaInsets: { top: 0, left: 0, right: 0, bottom: 0 },
         headerShown: false,

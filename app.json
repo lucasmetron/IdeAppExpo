@@ -6,6 +6,7 @@
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
+    "backgroundColor": "#0515",
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
@@ -20,11 +21,17 @@
         "backgroundColor": "#ffffff"
       }
     },
+    "androidStatusBar": {
+      "backgroundColor": "#0515",
+      "barStyle": "light-content"
+    },
+    "iosStatusBar": {
+      "barStyle": "dark-content",
+      "backgroundColor": "#0515"
+    },
     "web": {
       "favicon": "./assets/favicon.png"
     },
-    "plugins": [
-      "expo-font"
-    ]
+    "plugins": ["expo-font"]
   }
 }
