@@ -3,45 +3,45 @@ import React, {
   useState,
   ReactNode,
   Dispatch,
-  SetStateAction
-} from 'react'
+  SetStateAction,
+} from "react";
 
 interface RouterProps {
-  key: string
-  name: string
-  params: unknown
-  allAboutNavigation: unknown
+  key: string;
+  name: string;
+  params: unknown;
+  allAboutNavigation: unknown;
 }
 
 interface UserRouterContextType {
-  routerData: RouterProps
-  setRouterData: Dispatch<SetStateAction<RouterProps>>
+  routerData: RouterProps;
+  setRouterData: Dispatch<SetStateAction<RouterProps>>;
 }
 
 const initialState: RouterProps = {
-  key: '',
-  name: '',
+  key: "",
+  name: "",
   params: undefined,
-  allAboutNavigation: undefined
-}
+  allAboutNavigation: undefined,
+};
 
 const UserRouterContext = createContext<UserRouterContextType>({
   routerData: initialState,
-  setRouterData: () => {}
-})
+  setRouterData: () => {},
+});
 
 interface ContextProps {
-  children: ReactNode
+  children: ReactNode;
 }
 
 export function UserRouterProvider({ children }: ContextProps) {
-  const [routerData, setRouterData] = useState<RouterProps>(initialState)
+  const [routerData, setRouterData] = useState<RouterProps>(initialState);
 
   return (
     <UserRouterContext.Provider value={{ routerData, setRouterData }}>
       {children}
     </UserRouterContext.Provider>
-  )
+  );
 }
 
-export default UserRouterContext
+export default UserRouterContext;
