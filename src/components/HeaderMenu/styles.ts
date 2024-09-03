@@ -15,7 +15,7 @@ export const container = styled.View`
 
 export const titleChurch = styled.Text`
   color: ${color.interface.white};
-  font-size: ${RFPercentage(1.6)}px;
+  font-size: ${RFPercentage(1.7)}px;
   font-family: ${fontsName.title};
 `;
 
