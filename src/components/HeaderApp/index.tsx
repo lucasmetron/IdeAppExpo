@@ -1,6 +1,6 @@
 import React from "react";
 import { useRoute } from "@react-navigation/native";
-import { View } from "react-native";
+import { SafeAreaView } from "react-native";
 
 import * as S from "./styles";
 import {
@@ -49,8 +49,8 @@ export default function HeaderApp() {
   }
 
   return (
-    <View>
+    <SafeAreaView>
       <S.container>{returnHeaderCorrect()}</S.container>
-    </View>
+    </SafeAreaView>
   );
 }

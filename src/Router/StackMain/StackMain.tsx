@@ -19,7 +19,7 @@ export default function StackMain() {
     >
       <StackMainCreator.Screen name={stacksMain.tabs} component={Tabs} />
       <StackMainCreator.Screen name={stacksMain.login} component={Login} />
-      <StackMainCreator.Screen name={"stacksMain-test"} component={Teste} />
+      <StackMainCreator.Screen name={stacksMain.teste} component={Teste} />
     </StackMainCreator.Navigator>
   );
 }

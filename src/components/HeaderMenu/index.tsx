@@ -1,16 +1,17 @@
-/* eslint-disable @typescript-eslint/no-require-imports */
-import React, { useState } from "react";
-import { Modal, Text, TouchableOpacity } from "react-native";
+import React from "react";
+import { useNavigation } from "@react-navigation/native";
 
 import * as S from "./styles";
 import { RouteProps } from "types/RouteProps";
+import { stacksMain } from "Router/routes";
+
 interface HeaderMenuProps {
   route: RouteProps;
 }
 
 export default function HeaderMenu({ route }: HeaderMenuProps) {
-  const [isOpenModalLogin, setIsOpenModalLogin] = useState(false);
-  console.log("✌️route --->", route);
+  const navigation: any = useNavigation();
+
   return (
     <S.container>
       <S.image source={require("../../assets/logoBranca.png")} />
@@ -18,22 +19,11 @@ export default function HeaderMenu({ route }: HeaderMenuProps) {
 
       <S.btnLogin
         onPress={() => {
-          setIsOpenModalLogin((value) => !value);
+          navigation.navigate(stacksMain.login);
         }}
       >
         <S.textBtnLogin>LOGIN</S.textBtnLogin>
       </S.btnLogin>
-
-      <Modal visible={isOpenModalLogin} animationType="slide">
-        <Text>Teste</Text>
-        <TouchableOpacity
-          onPress={() => {
-            setIsOpenModalLogin(false);
-          }}
-        >
-          <Text>fechar</Text>
-        </TouchableOpacity>
-      </Modal>
     </S.container>
   );
 }
