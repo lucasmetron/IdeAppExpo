@@ -1,9 +1,6 @@
 import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
-import {
-  SafeAreaView,
-  useSafeAreaInsets,
-} from "react-native-safe-area-context";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 import { stacksMain } from "Router/routes";
 import Tabs from "Router/Tabs";
@@ -13,8 +10,6 @@ import Teste from "Views/Teste";
 const StackMainCreator = createStackNavigator();
 
 export default function StackMain() {
-  const insets = useSafeAreaInsets();
-  console.log("insets: ", insets);
   return (
     <StackMainCreator.Navigator
       screenOptions={{
