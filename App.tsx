@@ -9,24 +9,27 @@ import { color } from "styles/pallete";
 
 const App: React.FC = () => {
   return (
-    <SafeAreaView
-      style={styles.container}
-      edges={["top", "bottom", "left", "right"]}
-    >
-      <UserRouterProvider>
-        <StatusBar
-          style="dark"
-          backgroundColor={color.interface.backgroundColor}
-        />
-        <Router />
-      </UserRouterProvider>
-    </SafeAreaView>
+    <SafeAreaProvider>
+      <SafeAreaView
+        style={styles.container}
+        edges={["top", "bottom", "left", "right"]}
+      >
+        <UserRouterProvider>
+          <StatusBar
+            style="dark"
+            backgroundColor={color.interface.backgroundColor}
+          />
+          <Router />
+        </UserRouterProvider>
+      </SafeAreaView>
+    </SafeAreaProvider>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: color.interface.backgroundColor,
   },
 });
 

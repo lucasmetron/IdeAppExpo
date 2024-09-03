@@ -77,15 +77,10 @@ export default function Tabs() {
         tabBarInactiveTintColor: color.interface.darkgray3,
         tabBarStyle: {
           backgroundColor: color.interface.backgroundColor,
-          paddingBottom:
-            Platform.OS === "android"
-              ? 5
-              : Dimensions.get("window").height * 0.04,
+          paddingBottom: 5,
           paddingTop: 5,
           borderColor: color.interface.backgroundColor,
-          height:
-            Dimensions.get("window").height *
-            (Platform.OS === "android" ? 0.07 : 0.1),
+          height: Dimensions.get("window").height * 0.07,
           borderTopColor: color.interface.backgroundColor,
         },
 
