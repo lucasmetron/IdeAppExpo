@@ -12,6 +12,7 @@ import { color } from "../styles/pallete";
 import HeaderApp from "../components/HeaderApp";
 import StackMore from "./StackMore/StackMore";
 import { deleteTypeNavigatorFromString } from "utils/functions";
+import { fontsName } from "styles/fonts";
 
 const Tab = createBottomTabNavigator();
 
@@ -72,7 +73,11 @@ export default function Tabs() {
               );
           }
         },
-        tabBarLabelStyle: { fontSize: 13, marginTop: -2 },
+        tabBarLabelStyle: {
+          fontSize: 13,
+          marginTop: -2,
+          fontFamily: fontsName.text,
+        },
         tabBarActiveTintColor: color.interface.white,
         tabBarInactiveTintColor: color.interface.darkgray3,
         tabBarStyle: {

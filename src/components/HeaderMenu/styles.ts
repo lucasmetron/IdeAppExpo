@@ -3,6 +3,7 @@ import { RFPercentage } from "react-native-responsive-fontsize";
 
 import styled from "styled-components/native";
 import { color } from "styles/pallete";
+import { fontsName } from "styles/fonts";
 
 export const container = styled.View`
   flex: 1;
@@ -15,6 +16,7 @@ export const container = styled.View`
 export const titleChurch = styled.Text`
   color: ${color.interface.white};
   font-size: ${RFPercentage(1.6)}px;
+  font-family: ${fontsName.title};
 `;
 
 export const image = styled.Image`
@@ -35,4 +37,5 @@ export const btnLogin = styled.TouchableOpacity`
 
 export const textBtnLogin = styled.Text`
   color: ${color.interface.lightGray};
+  font-family: ${fontsName.text};
 `;
