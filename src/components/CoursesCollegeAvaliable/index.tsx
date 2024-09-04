@@ -1,12 +1,11 @@
 import { useContext } from "react";
-import { Image, Text, StyleSheet } from "react-native";
+import { Image, StyleSheet, FlatList } from "react-native";
 import { RFPercentage } from "react-native-responsive-fontsize";
 
 import * as S from "./styles";
 import CoursesCollegeContext from "context/CoursesCollege";
 import { formatDate } from "utils/functions";
 import { CoursesCollegeProps } from "types/CoursesCollegeProps";
-import { FlatList } from "react-native-gesture-handler";
 
 export default function CoursesCollegeAvaliable() {
   const { courserCollege } = useContext(CoursesCollegeContext);
@@ -22,7 +21,7 @@ export default function CoursesCollegeAvaliable() {
           <S.initialDate numberOfLines={1}>
             {formatDate(course?.data_inicio)}
           </S.initialDate>
-          <S.nameCourse>{course?.nome_curso}</S.nameCourse>
+          <S.nameCourse numberOfLines={3}>{course?.nome_curso}</S.nameCourse>
         </S.infos>
       </S.conteinerItemCourseCollege>
     );
@@ -38,7 +37,12 @@ export default function CoursesCollegeAvaliable() {
         <>
           <S.titleCourses>Cursos disponíveis</S.titleCourses>
 
-          {returnCourse(courserCollege[0])}
+          <FlatList
+            style={styles.list}
+            data={courserCollege}
+            renderItem={({ item }) => returnCourse(item)}
+            keyExtractor={(i) => i.id_curso.toString()}
+          />
         </>
       )}
     </S.loadContainer>
@@ -50,5 +54,9 @@ const styles = StyleSheet.create({
     width: "100%",
     height: RFPercentage(13),
     borderRadius: 5,
+  },
+
+  list: {
+    width: "100%",
   },
 });

@@ -16,7 +16,6 @@ import { color } from "styles/pallete";
 
 const App: React.FC = () => {
   const [fontsLoaded] = useFonts({ Inter_400Regular, Inter_700Bold });
-  console.log("fontsLoaded: ", fontsLoaded);
 
   const onLayputRootView = useCallback(async () => {
     await SplashScreen.hideAsync();

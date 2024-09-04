@@ -12,7 +12,6 @@ export default function Home() {
   const [isOpen, setIsOpen] = useState(false);
 
   const insets = useSafeAreaInsets();
-  console.log("insets: ", insets);
 
   return (
     <S.container>

@@ -39,6 +39,7 @@ export const conteinerItemCourseCollege = styled.TouchableOpacity`
   gap: ${RFPercentage(2)}px;
   flex-direction: row;
   align-items: flex-start;
+  padding-bottom: ${RFPercentage(3)}px;
 `;
 
 export const imgBox = styled.View`

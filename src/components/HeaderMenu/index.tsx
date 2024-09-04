@@ -14,7 +14,7 @@ export default function HeaderMenu({ route }: HeaderMenuProps) {
   return (
     <S.container>
       <S.image source={require("../../assets/logoBranca.png")} />
-      <S.titleChurch>Igreja do Evangelho</S.titleChurch>
+      {/* <S.titleChurch>Igreja do Evangelho</S.titleChurch> */}
 
       <S.btnLogin
         onPress={() => {
