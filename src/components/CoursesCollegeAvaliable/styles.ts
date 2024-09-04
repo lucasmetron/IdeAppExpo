@@ -33,3 +33,35 @@ export const noCoursesText = styled.Text`
   font-family: ${fontsName.text};
   font-size: ${RFPercentage(1.5)}px;
 `;
+
+export const conteinerItemCourseCollege = styled.TouchableOpacity`
+  width: 100%;
+  gap: ${RFPercentage(2)}px;
+  flex-direction: row;
+  align-items: flex-start;
+`;
+
+export const imgBox = styled.View`
+  flex: 4;
+  width: 100%;
+  gap: 3px;
+`;
+
+export const infos = styled.View`
+  flex: 6;
+  width: 100%;
+  gap: 3px;
+`;
+
+export const initialDate = styled.Text`
+  color: ${color.interface.white};
+  opacity: 0.5;
+  font-size: ${RFPercentage(1.5)}px;
+  font-family: ${fontsName.text};
+`;
+
+export const nameCourse = styled.Text`
+  color: ${color.interface.white};
+  font-size: ${RFPercentage(2)}px;
+  font-family: ${fontsName.title};
+`;
