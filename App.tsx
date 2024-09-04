@@ -11,6 +11,7 @@ import * as SplashScreen from "expo-splash-screen";
 
 import Router from "./src/Router";
 import { UserRouterProvider } from "./src/context/UserRouter";
+import { CoursesCollegeProvider } from "context/CoursesCollege";
 import { color } from "styles/pallete";
 
 const App: React.FC = () => {
@@ -32,13 +33,15 @@ const App: React.FC = () => {
         edges={["top", "bottom", "left", "right"]}
         onLayout={onLayputRootView}
       >
-        <UserRouterProvider>
-          <StatusBar
-            style="dark"
-            backgroundColor={color.interface.backgroundColor}
-          />
-          <Router />
-        </UserRouterProvider>
+        <CoursesCollegeProvider>
+          <UserRouterProvider>
+            <StatusBar
+              style="dark"
+              backgroundColor={color.interface.backgroundColor}
+            />
+            <Router />
+          </UserRouterProvider>
+        </CoursesCollegeProvider>
       </SafeAreaView>
     </SafeAreaProvider>
   );
