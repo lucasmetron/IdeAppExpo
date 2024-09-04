@@ -6,6 +6,7 @@ import * as S from "./styles";
 import { useNavigation } from "@react-navigation/native";
 import { getCourses } from "./req";
 import CoursesCollegeContext from "context/CoursesCollege";
+import LoadScreen from "components/LoadScreen";
 
 export default function College() {
   const navigation: any = useNavigation();
@@ -24,11 +25,17 @@ export default function College() {
   }, []);
   return (
     <S.container>
-      <Text>College teste</Text>
-      <Button
-        title="teste"
-        onPress={() => navigation.navigate("stacksCollege-test")}
-      />
+      {isLoadCourses ? (
+        <LoadScreen />
+      ) : (
+        <>
+          <Text>College teste</Text>
+          <Button
+            title="teste"
+            onPress={() => navigation.navigate("stacksCollege-test")}
+          />
+        </>
+      )}
     </S.container>
   );
 }
