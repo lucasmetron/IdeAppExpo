@@ -19,4 +19,5 @@ export interface CoursesCollegeProps {
   sigla: any;
   tipo: string;
   valor: number;
+  imgUrl: string;
 }
