@@ -1,8 +1,9 @@
 import { useContext, useEffect } from "react";
-import { Text } from "react-native";
+import { Text, Image } from "react-native";
 
 import * as S from "./styles";
 import CoursesCollegeContext from "context/CoursesCollege";
+import { ScrollView } from "react-native-gesture-handler";
 
 export default function RegistrationCollege() {
   const { courseSelected, setCourseSelected } = useContext(
@@ -16,7 +17,49 @@ export default function RegistrationCollege() {
   }, []);
   return (
     <S.container>
-      <Text>{courseSelected?.nome_curso}</Text>
+      <S.Scroll>
+        <S.imgCourseContainer>
+          <S.imgCourse source={{ uri: courseSelected?.imgUrl || "" }} />
+        </S.imgCourseContainer>
+
+        <S.infosContainer>
+          <Text>{courseSelected?.nome_curso || "Nome do curso"}</Text>
+          <Text>{courseSelected?.nome_curso || "Nome do curso"}</Text>
+          <Text>{courseSelected?.nome_curso || "Nome do curso"}</Text>
+          <Text>{courseSelected?.nome_curso || "Nome do curso"}</Text>
+          <Text>{courseSelected?.nome_curso || "Nome do curso"}</Text>
+          <Text>{courseSelected?.nome_curso || "Nome do curso"}</Text>
+          <Text>{courseSelected?.nome_curso || "Nome do curso"}</Text>
+          <Text>{courseSelected?.nome_curso || "Nome do curso"}</Text>
+          <Text>{courseSelected?.nome_curso || "Nome do curso"}</Text>
+          <Text>{courseSelected?.nome_curso || "Nome do curso"}</Text>
+          <Text>{courseSelected?.nome_curso || "Nome do curso"}</Text>
+          <Text>{courseSelected?.nome_curso || "Nome do curso"}</Text>
+          <Text>{courseSelected?.nome_curso || "Nome do curso"}</Text>
+          <Text>{courseSelected?.nome_curso || "Nome do curso"}</Text>
+          <Text>{courseSelected?.nome_curso || "Nome do curso"}</Text>
+          <Text>{courseSelected?.nome_curso || "Nome do curso"}</Text>
+          <Text>{courseSelected?.nome_curso || "Nome do curso"}</Text>
+          <Text>{courseSelected?.nome_curso || "Nome do curso"}</Text>
+          <Text>{courseSelected?.nome_curso || "Nome do curso"}</Text>
+          <Text>{courseSelected?.nome_curso || "Nome do curso"}</Text>
+          <Text>{courseSelected?.nome_curso || "Nome do curso"}</Text>
+          <Text>{courseSelected?.nome_curso || "Nome do curso"}</Text>
+          <Text>{courseSelected?.nome_curso || "Nome do curso"}</Text>
+          <Text>{courseSelected?.nome_curso || "Nome do curso"}</Text>
+          <Text>{courseSelected?.nome_curso || "Nome do curso"}</Text>
+          <Text>{courseSelected?.nome_curso || "Nome do curso"}</Text>
+          <Text>{courseSelected?.nome_curso || "Nome do curso"}</Text>
+          <Text>{courseSelected?.nome_curso || "Nome do curso"}</Text>
+          <Text>{courseSelected?.nome_curso || "Nome do curso"}</Text>
+        </S.infosContainer>
+      </S.Scroll>
+
+      <S.containerBtn>
+        <S.btnRegister>
+          <S.btnText>Matricular</S.btnText>
+        </S.btnRegister>
+      </S.containerBtn>
     </S.container>
   );
 }

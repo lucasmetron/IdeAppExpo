@@ -25,7 +25,7 @@ export default function HeaderRegistrationCollege({
         <MaterialIconsfrom
           name="arrow-back-ios"
           color={color.interface.white}
-          size={RFPercentage(2)}
+          size={RFPercentage(2.5)}
         />
       </S.btnGoBack>
 
@@ -35,7 +35,7 @@ export default function HeaderRegistrationCollege({
         <EvilIcons
           name="share-google"
           color={color.interface.white}
-          size={RFPercentage(3)}
+          size={RFPercentage(4)}
         />
       </S.btnShare>
     </S.container>
