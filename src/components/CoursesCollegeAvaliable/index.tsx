@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { Image, StyleSheet, FlatList } from "react-native";
+import { Image, StyleSheet, FlatList, RefreshControl } from "react-native";
 import { RFPercentage } from "react-native-responsive-fontsize";
 
 import * as S from "./styles";
@@ -8,11 +8,16 @@ import { formatDate } from "utils/functions";
 import { CoursesCollegeProps } from "types/CoursesCollegeProps";
 import { useNavigation } from "@react-navigation/native";
 import { stacksCollege } from "Router/routes";
+import { getCourses } from "Views/College/req";
 
 export default function CoursesCollegeAvaliable() {
-  const { courserCollege, setCourseSelected, courseSelected } = useContext(
-    CoursesCollegeContext
-  );
+  const {
+    courserCollege,
+    setCourseSelected,
+    isLoadCourses,
+    setIsLoadCourses,
+    setCoursesCollege,
+  } = useContext(CoursesCollegeContext);
 
   const navigation: any = useNavigation();
 
@@ -38,6 +43,12 @@ export default function CoursesCollegeAvaliable() {
     );
   }
 
+  async function refreshList() {
+    setIsLoadCourses(true);
+    await getCourses(setCoursesCollege);
+    setIsLoadCourses(false);
+  }
+
   return (
     <S.loadContainer>
       {courserCollege.length === 0 ? (
@@ -53,6 +64,12 @@ export default function CoursesCollegeAvaliable() {
             data={courserCollege}
             renderItem={({ item }) => returnCourse(item)}
             keyExtractor={(i) => i.id_curso.toString()}
+            refreshControl={
+              <RefreshControl
+                refreshing={isLoadCourses}
+                onRefresh={refreshList}
+              />
+            }
           />
         </>
       )}
