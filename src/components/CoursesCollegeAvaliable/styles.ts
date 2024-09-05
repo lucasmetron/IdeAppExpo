@@ -46,6 +46,7 @@ export const imgBox = styled.View`
   flex: 4;
   width: 100%;
   gap: 3px;
+  background-color: ${color.interface.backgroundColor};
 `;
 
 export const infos = styled.View`

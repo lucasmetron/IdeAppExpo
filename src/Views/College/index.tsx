@@ -22,7 +22,7 @@ export default function College() {
   return (
     <S.container>
       {isLoadCourses ? (
-        <LoadScreen />
+        <LoadScreen text="Carregando cursos" />
       ) : (
         <>
           <CoursesCollegeAvaliable />
