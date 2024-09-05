@@ -6,13 +6,24 @@ import * as S from "./styles";
 import CoursesCollegeContext from "context/CoursesCollege";
 import { formatDate } from "utils/functions";
 import { CoursesCollegeProps } from "types/CoursesCollegeProps";
+import { useNavigation } from "@react-navigation/native";
+import { stacksCollege } from "Router/routes";
 
 export default function CoursesCollegeAvaliable() {
-  const { courserCollege } = useContext(CoursesCollegeContext);
+  const { courserCollege, setCourseSelected, courseSelected } = useContext(
+    CoursesCollegeContext
+  );
+
+  const navigation: any = useNavigation();
 
   function returnCourse(course: CoursesCollegeProps) {
     return (
-      <S.conteinerItemCourseCollege>
+      <S.conteinerItemCourseCollege
+        onPress={() => {
+          navigation.navigate(stacksCollege.registrationCollege);
+          setCourseSelected(course);
+        }}
+      >
         <S.imgBox>
           <Image source={{ uri: course.imgUrl }} style={styles.img} />
         </S.imgBox>

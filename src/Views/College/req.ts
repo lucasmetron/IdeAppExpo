@@ -16,6 +16,6 @@ export async function getCourses(setCoursesCollege: any) {
       }
     })
     .catch((error) => {
-      console.log("error: ", error);
+      setCoursesCollege([]);
     });
 }

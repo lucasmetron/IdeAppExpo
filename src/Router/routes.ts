@@ -1,37 +1,37 @@
 export const stacksMain = {
-  tabs: 'stacksMain-tab',
-  login: 'stacksMain-login',
-  teste: 'stacksMain-test'
-}
+  tabs: "stacksMain-tab",
+  login: "stacksMain-login",
+  teste: "stacksMain-test",
+};
 
 export const tabsRoutes = {
-  home: { name: 'tab-Home', icon: 'home' },
-  content: { name: 'tab-Conteúdo', icon: 'folder-video' },
-  college: { name: 'tab-College', icon: 'open-book' },
-  more: { name: 'tab-More', icon: 'more-horiz' }
-}
+  home: { name: "tab-Home", icon: "home" },
+  content: { name: "tab-Conteúdo", icon: "folder-video" },
+  college: { name: "tab-College", icon: "open-book" },
+  more: { name: "tab-More", icon: "more-horiz" },
+};
 
 export const stacksHome = {
-  home: 'stacksHome-Home',
-  teste: 'stacksHome-test'
-}
+  home: "stacksHome-Home",
+  teste: "stacksHome-test",
+};
 
 export const stacksContent = {
-  content: 'stacksContent-Conteúdo',
-  teste: 'stacksContent-test'
-}
+  content: "stacksContent-Conteúdo",
+  teste: "stacksContent-test",
+};
 
 export const stacksCollege = {
-  college: 'stacksCollege-College',
-  teste: 'stacksCollege-test'
-}
+  college: "stacksCollege-College",
+  registrationCollege: "stacksCollege-registrationCollege",
+};
 
 export const stacksMore = {
-  moreStack: 'stacksMore-Mais',
-  schedule: 'stacksMore-Agenda',
-  ourPages: 'stacksMore-Nossas Páginas',
-  askForPray: 'stacksMore-Pedido de oração',
-  donation: 'stacksMore-Doações',
-  share: 'stacksMore-Compartilhar',
-  talkToUs: 'stacksMore-Fale Conosco'
-}
+  moreStack: "stacksMore-Mais",
+  schedule: "stacksMore-Agenda",
+  ourPages: "stacksMore-Nossas Páginas",
+  askForPray: "stacksMore-Pedido de oração",
+  donation: "stacksMore-Doações",
+  share: "stacksMore-Compartilhar",
+  talkToUs: "stacksMore-Fale Conosco",
+};

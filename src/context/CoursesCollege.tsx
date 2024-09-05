@@ -12,6 +12,8 @@ interface CoursesCollegeContextType {
   setCoursesCollege: Dispatch<SetStateAction<CoursesCollegeProps[]>>;
   isLoadCourses: boolean;
   setIsLoadCourses: Dispatch<SetStateAction<boolean>>;
+  courseSelected: CoursesCollegeProps | null;
+  setCourseSelected: Dispatch<SetStateAction<CoursesCollegeProps | null>>;
 }
 
 const initialState: CoursesCollegeProps[] = [];
@@ -21,6 +23,8 @@ const CoursesCollegeContext = createContext<CoursesCollegeContextType>({
   setCoursesCollege: () => {},
   isLoadCourses: false,
   setIsLoadCourses: () => {},
+  courseSelected: null,
+  setCourseSelected: () => {},
 });
 
 interface ContextProps {
@@ -30,7 +34,8 @@ interface ContextProps {
 export function CoursesCollegeProvider({ children }: ContextProps) {
   const [courserCollege, setCoursesCollege] =
     useState<CoursesCollegeProps[]>(initialState);
-
+  const [courseSelected, setCourseSelected] =
+    useState<null | CoursesCollegeProps>(null);
   const [isLoadCourses, setIsLoadCourses] = useState(false);
 
   return (
@@ -40,6 +45,8 @@ export function CoursesCollegeProvider({ children }: ContextProps) {
         setCoursesCollege,
         setIsLoadCourses,
         isLoadCourses,
+        courseSelected,
+        setCourseSelected,
       }}
     >
       {children}

@@ -13,6 +13,7 @@ import {
 } from "Router/routes";
 import HeaderMenu from "components/HeaderMenu";
 import HeaderDefault from "components/HeaderDefault";
+import HeaderRegistrationCollege from "components/HeaderRegistrationCollege";
 
 export default function HeaderApp() {
   const route = useRoute();
@@ -38,10 +39,12 @@ export default function HeaderApp() {
       case stacksMore.share:
       case stacksMore.talkToUs:
       case stacksHome.teste:
-      case stacksCollege.teste:
       case stacksContent.teste:
       case stacksMain.teste:
         return <HeaderDefault route={route} showBackArrow />;
+
+      case stacksCollege.registrationCollege:
+        return <HeaderRegistrationCollege route={route} />;
 
       default:
         return <HeaderDefault route={route} />;
