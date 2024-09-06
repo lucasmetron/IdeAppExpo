@@ -1,9 +1,14 @@
 import { useContext, useEffect } from "react";
-import { Text, Image } from "react-native";
+import { Text } from "react-native";
+import { RFPercentage } from "react-native-responsive-fontsize";
+import MaterialIcons from "react-native-vector-icons/MaterialIcons";
+import AntDesign from "react-native-vector-icons/AntDesign";
+import RenderHTML from "react-native-render-html";
 
 import * as S from "./styles";
 import CoursesCollegeContext from "context/CoursesCollege";
-import { ScrollView } from "react-native-gesture-handler";
+import { color } from "styles/pallete";
+import { formatDateToDayAndMonth } from "utils/functions";
 
 export default function RegistrationCollege() {
   const { courseSelected, setCourseSelected } = useContext(
@@ -23,35 +28,53 @@ export default function RegistrationCollege() {
         </S.imgCourseContainer>
 
         <S.infosContainer>
-          <Text>{courseSelected?.nome_curso || "Nome do curso"}</Text>
-          <Text>{courseSelected?.nome_curso || "Nome do curso"}</Text>
-          <Text>{courseSelected?.nome_curso || "Nome do curso"}</Text>
-          <Text>{courseSelected?.nome_curso || "Nome do curso"}</Text>
-          <Text>{courseSelected?.nome_curso || "Nome do curso"}</Text>
-          <Text>{courseSelected?.nome_curso || "Nome do curso"}</Text>
-          <Text>{courseSelected?.nome_curso || "Nome do curso"}</Text>
-          <Text>{courseSelected?.nome_curso || "Nome do curso"}</Text>
-          <Text>{courseSelected?.nome_curso || "Nome do curso"}</Text>
-          <Text>{courseSelected?.nome_curso || "Nome do curso"}</Text>
-          <Text>{courseSelected?.nome_curso || "Nome do curso"}</Text>
-          <Text>{courseSelected?.nome_curso || "Nome do curso"}</Text>
-          <Text>{courseSelected?.nome_curso || "Nome do curso"}</Text>
-          <Text>{courseSelected?.nome_curso || "Nome do curso"}</Text>
-          <Text>{courseSelected?.nome_curso || "Nome do curso"}</Text>
-          <Text>{courseSelected?.nome_curso || "Nome do curso"}</Text>
-          <Text>{courseSelected?.nome_curso || "Nome do curso"}</Text>
-          <Text>{courseSelected?.nome_curso || "Nome do curso"}</Text>
-          <Text>{courseSelected?.nome_curso || "Nome do curso"}</Text>
-          <Text>{courseSelected?.nome_curso || "Nome do curso"}</Text>
-          <Text>{courseSelected?.nome_curso || "Nome do curso"}</Text>
-          <Text>{courseSelected?.nome_curso || "Nome do curso"}</Text>
-          <Text>{courseSelected?.nome_curso || "Nome do curso"}</Text>
-          <Text>{courseSelected?.nome_curso || "Nome do curso"}</Text>
-          <Text>{courseSelected?.nome_curso || "Nome do curso"}</Text>
-          <Text>{courseSelected?.nome_curso || "Nome do curso"}</Text>
-          <Text>{courseSelected?.nome_curso || "Nome do curso"}</Text>
-          <Text>{courseSelected?.nome_curso || "Nome do curso"}</Text>
-          <Text>{courseSelected?.nome_curso || "Nome do curso"}</Text>
+          <S.titleCourse>
+            {courseSelected?.nome_curso || "Nome do curso"}
+          </S.titleCourse>
+
+          <S.dateBox>
+            <MaterialIcons
+              style={{ opacity: 0.3 }}
+              name="date-range"
+              size={RFPercentage(3.5)}
+              color={color.interface.white}
+            />
+
+            <S.infosDateBox>
+              <>
+                <S.date>
+                  {formatDateToDayAndMonth(courseSelected?.data_inicio!)}
+                </S.date>
+                <S.linkAndIcon>
+                  <S.linkDate>Salvar na agenda</S.linkDate>
+                  <AntDesign
+                    name="arrowright"
+                    style={{ opacity: 0.7 }}
+                    size={RFPercentage(2)}
+                    color={color.interface.white}
+                  />
+                </S.linkAndIcon>
+              </>
+            </S.infosDateBox>
+          </S.dateBox>
+
+          <S.aboutBox>
+            <MaterialIcons
+              style={{ opacity: 0.3 }}
+              name="description"
+              size={RFPercentage(3.5)}
+              color={color.interface.white}
+            />
+            <S.iconsAndDescript>
+              <S.aboutTitle>Sobre</S.aboutTitle>
+              <S.description>{courseSelected?.descricao_curso}</S.description>
+              <RenderHTML
+                tagsStyles={tagsStyles}
+                contentWidth={100}
+                source={{ html: courseSelected?.descricao_curso! }}
+              />
+            </S.iconsAndDescript>
+          </S.aboutBox>
         </S.infosContainer>
       </S.Scroll>
 
@@ -63,3 +86,19 @@ export default function RegistrationCollege() {
     </S.container>
   );
 }
+
+const tagsStyles: any = {
+  h1: {
+    color: "blue",
+    fontSize: 24,
+    fontWeight: "bold",
+  },
+  p: {
+    color: "red",
+    fontSize: 16,
+  },
+  strong: {
+    fontWeight: "bold",
+    color: "red",
+  },
+};

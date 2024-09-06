@@ -18,6 +18,7 @@ export const titleCourses = styled.Text`
   color: ${color.interface.white};
   font-family: ${fontsName.title};
   font-size: ${RFPercentage(2.5)}px;
+  padding: ${RFPercentage(1)}px 0;
 `;
 
 export const noCoursesConteiner = styled.View`
