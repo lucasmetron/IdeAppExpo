@@ -1,23 +1,25 @@
-import { useContext, useEffect } from "react";
-import { Text } from "react-native";
+import { useContext, useEffect, useState } from "react";
 import { RFPercentage } from "react-native-responsive-fontsize";
 import MaterialIcons from "react-native-vector-icons/MaterialIcons";
 import AntDesign from "react-native-vector-icons/AntDesign";
 import RenderHTML from "react-native-render-html";
+import { Text } from "react-native";
 
 import * as S from "./styles";
 import CoursesCollegeContext from "context/CoursesCollege";
 import { color } from "styles/pallete";
 import { formatDateToDayAndMonth } from "utils/functions";
+import ModalComp from "components/ModalComp";
 
 export default function RegistrationCollege() {
   const { courseSelected, setCourseSelected } = useContext(
     CoursesCollegeContext
   );
+  const [isOpenModalRegistration, setIsOpenModalRegistration] = useState(false);
 
   useEffect(() => {
     return () => {
-      setCourseSelected(null);
+      // setCourseSelected(null);
     };
   }, []);
   return (
@@ -67,7 +69,7 @@ export default function RegistrationCollege() {
             />
             <S.iconsAndDescript>
               <S.aboutTitle>Sobre</S.aboutTitle>
-              <S.description>{courseSelected?.descricao_curso}</S.description>
+              {/* <S.description>{courseSelected?.descricao_curso}</S.description> */}
               <RenderHTML
                 tagsStyles={tagsStyles}
                 contentWidth={100}
@@ -79,26 +81,29 @@ export default function RegistrationCollege() {
       </S.Scroll>
 
       <S.containerBtn>
-        <S.btnRegister>
+        <S.btnRegister onPress={() => setIsOpenModalRegistration(true)}>
           <S.btnText>Matricular</S.btnText>
         </S.btnRegister>
       </S.containerBtn>
+
+      <ModalComp
+        isOpen={isOpenModalRegistration}
+        setIsOpen={setIsOpenModalRegistration}
+        title="Cadastro"
+      >
+        <Text>teste 2020 Lucas</Text>
+      </ModalComp>
     </S.container>
   );
 }
 
 const tagsStyles: any = {
   h1: {
-    color: "blue",
-    fontSize: 24,
-    fontWeight: "bold",
+    color: color.interface.white,
+    fontSize: RFPercentage(3),
   },
   p: {
-    color: "red",
-    fontSize: 16,
-  },
-  strong: {
-    fontWeight: "bold",
-    color: "red",
+    color: color.interface.white,
+    fontSize: RFPercentage(1.5),
   },
 };
