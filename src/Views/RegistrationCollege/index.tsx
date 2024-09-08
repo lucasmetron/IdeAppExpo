@@ -10,6 +10,7 @@ import CoursesCollegeContext from "context/CoursesCollege";
 import { color } from "styles/pallete";
 import { formatDateToDayAndMonth } from "utils/functions";
 import ModalComp from "components/ModalComp";
+import FormRegistrationCollege from "components/FormRegistrationCollege";
 
 export default function RegistrationCollege() {
   const { courseSelected, setCourseSelected } = useContext(
@@ -91,7 +92,7 @@ export default function RegistrationCollege() {
         setIsOpen={setIsOpenModalRegistration}
         title="Cadastro"
       >
-        <Text>teste 2020 Lucas</Text>
+        <FormRegistrationCollege />
       </ModalComp>
     </S.container>
   );

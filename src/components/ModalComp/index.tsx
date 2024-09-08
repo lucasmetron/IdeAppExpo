@@ -36,8 +36,7 @@ function ModalComp({
         </S.btnClose>
 
         {title !== "" && <S.title>{title}</S.title>}
-
-        {children}
+        <S.containerChild>{children}</S.containerChild>
       </S.container>
     </Modal>
   );

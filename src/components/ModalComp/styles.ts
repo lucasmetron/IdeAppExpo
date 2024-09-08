@@ -24,4 +24,10 @@ export const title = styled.Text`
   color: ${color.interface.white};
   align-items: center;
   justify-content: center;
+  padding-bottom: ${RFPercentage(1)}px;
+`;
+
+export const containerChild = styled.View`
+  flex: 1;
+  padding: ${RFPercentage(1)}px;
 `;
