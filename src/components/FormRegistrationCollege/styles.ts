@@ -32,12 +32,17 @@ export const containerBtn = styled.TouchableOpacity`
   width: 100%;
   align-items: center;
   justify-content: center;
-  padding-bottom: ${RFPercentage(4)}px;
+  /* padding-bottom: ${RFPercentage(2)}px; */
 `;
 
-export const btnRegister = styled.TouchableOpacity`
+interface btnRegisterProps {
+  canSave: boolean;
+}
+
+export const btnRegister = styled.TouchableOpacity<btnRegisterProps>`
   width: 100%;
-  background-color: ${color.system.success};
+  background-color: ${(props) =>
+    props.canSave ? color.system.success : color.interface.darkgray};
   border-radius: 5px;
   padding: ${RFPercentage(1.5)}px ${RFPercentage(3)}px;
   align-items: center;

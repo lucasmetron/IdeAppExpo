@@ -15,6 +15,19 @@ export default function FormRegistrationCollege() {
   const [dataForm, setDataForm] =
     useState<FormRegistrationCollegeProps>(initialStateDataForm);
 
+  function canSave() {
+    if (
+      dataForm.name !== "" &&
+      dataForm.cel !== "" &&
+      dataForm.cpf !== "" &&
+      dataForm.email !== ""
+    ) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
   useEffect(() => {
     return () => {
       setDataForm(initialStateDataForm);
@@ -58,7 +71,7 @@ export default function FormRegistrationCollege() {
               onChangeText={(newText) => {
                 setDataForm((item) => ({ ...item, cel: newText }));
               }}
-              keyboardType="name-phone-pad"
+              keyboardType="numeric"
               placeholder="Celular DD + Número. Ex:61984675545"
               placeholderTextColor="white"
               returnKeyType="done"
@@ -77,7 +90,7 @@ export default function FormRegistrationCollege() {
           </S.containerInputs>
 
           <S.containerBtn>
-            <S.btnRegister onPress={() => {}}>
+            <S.btnRegister canSave={canSave()} onPress={() => {}}>
               <S.btnText>Confirmar</S.btnText>
             </S.btnRegister>
           </S.containerBtn>
