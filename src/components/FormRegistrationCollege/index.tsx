@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-
 import * as S from "./styles";
 import { FormRegistrationCollegeProps } from "types/FormRegistrationCollegeProps";
 
@@ -14,7 +13,6 @@ const initialStateDataForm: FormRegistrationCollegeProps = {
 export default function FormRegistrationCollege() {
   const [dataForm, setDataForm] =
     useState<FormRegistrationCollegeProps>(initialStateDataForm);
-  console.log("dataForm: ", dataForm);
 
   useEffect(() => {
     return () => {
@@ -33,6 +31,7 @@ export default function FormRegistrationCollege() {
           keyboardType="default"
           placeholder="Nome"
           placeholderTextColor="white"
+          returnKeyType="done"
         />
 
         <S.textInput
@@ -43,6 +42,7 @@ export default function FormRegistrationCollege() {
           keyboardType="email-address"
           placeholder="E-mail"
           placeholderTextColor="white"
+          returnKeyType="done"
         />
 
         <S.textInput
@@ -53,6 +53,7 @@ export default function FormRegistrationCollege() {
           keyboardType="name-phone-pad"
           placeholder="Celular DD + Número. Ex:61984675545"
           placeholderTextColor="white"
+          returnKeyType="done"
         />
 
         <S.textInput
@@ -63,6 +64,7 @@ export default function FormRegistrationCollege() {
           keyboardType="numeric"
           placeholder="CPF somente números. Ex:0123456789"
           placeholderTextColor="white"
+          returnKeyType="done"
         />
       </S.containerInputs>
 
