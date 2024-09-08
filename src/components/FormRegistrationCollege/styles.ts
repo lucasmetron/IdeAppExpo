@@ -32,7 +32,6 @@ export const containerBtn = styled.TouchableOpacity`
   width: 100%;
   align-items: center;
   justify-content: center;
-  /* padding-bottom: ${RFPercentage(2)}px; */
 `;
 
 interface btnRegisterProps {

@@ -38,9 +38,13 @@ export default function FormRegistrationCollege() {
     <KeyboardAvoidingView
       style={{ flex: 1 }}
       behavior={Platform.OS === "ios" ? "padding" : "height"} // Define o comportamento para iOS e Android
-      keyboardVerticalOffset={80} // Ajusta a altura conforme necessário
+      keyboardVerticalOffset={Platform.OS === "ios" ? 130 : 0}
     >
-      <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
+      <ScrollView
+        contentContainerStyle={{ flexGrow: 1 }}
+        contentInsetAdjustmentBehavior="automatic"
+        keyboardShouldPersistTaps="handled"
+      >
         {/* Scrollview para tornar o conteúdo rolável */}
         <S.container>
           <S.containerInputs>
