@@ -37,24 +37,28 @@ export function formatDate(dateString: string): string {
 
 //recebe data assim 2022-10-10 e retorna assim "04 de setembro"
 export function formatDateToDayAndMonth(data: string): string {
-  const meses = [
-    "janeiro",
-    "fevereiro",
-    "março",
-    "abril",
-    "maio",
-    "junho",
-    "julho",
-    "agosto",
-    "setembro",
-    "outubro",
-    "novembro",
-    "dezembro",
-  ];
+  try {
+    const meses = [
+      "janeiro",
+      "fevereiro",
+      "março",
+      "abril",
+      "maio",
+      "junho",
+      "julho",
+      "agosto",
+      "setembro",
+      "outubro",
+      "novembro",
+      "dezembro",
+    ];
 
-  const [ano, mes, dia] = data.split("-");
+    const [ano, mes, dia] = data.split("-");
 
-  const mesPorExtenso = meses[parseInt(mes) - 1]; // Subtraindo 1 para ajustar ao índice do array
+    const mesPorExtenso = meses[parseInt(mes) - 1]; // Subtraindo 1 para ajustar ao índice do array
 
-  return `${dia} de ${mesPorExtenso}`;
+    return `${dia} de ${mesPorExtenso}`;
+  } catch {
+    return "";
+  }
 }

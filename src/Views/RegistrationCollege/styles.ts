@@ -9,7 +9,7 @@ export const container = styled.View`
   position: relative;
   flex: 1;
   flex-direction: column;
-  background-color: ${color.interface.backgroundColor};
+  background-color: ${color.interface.backgroundColor2};
   gap: ${RFPercentage(1)}px;
 `;
 
