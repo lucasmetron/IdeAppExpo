@@ -1,5 +1,5 @@
 import React, { SetStateAction } from "react";
-import { Modal, SafeAreaView, View, Text, Platform } from "react-native";
+import { Modal, Platform } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import AntDesign from "react-native-vector-icons/AntDesign";
 import { RFPercentage } from "react-native-responsive-fontsize";

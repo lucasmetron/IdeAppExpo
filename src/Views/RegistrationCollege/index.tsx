@@ -3,7 +3,6 @@ import { RFPercentage } from "react-native-responsive-fontsize";
 import MaterialIcons from "react-native-vector-icons/MaterialIcons";
 import AntDesign from "react-native-vector-icons/AntDesign";
 import RenderHTML from "react-native-render-html";
-import { Text } from "react-native";
 
 import * as S from "./styles";
 import CoursesCollegeContext from "context/CoursesCollege";
@@ -20,7 +19,7 @@ export default function RegistrationCollege() {
 
   useEffect(() => {
     return () => {
-      // setCourseSelected(null);
+      setCourseSelected(null);
     };
   }, []);
   return (

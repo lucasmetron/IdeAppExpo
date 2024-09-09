@@ -1,5 +1,5 @@
 import React, { useCallback } from "react";
-import { StyleSheet, View } from "react-native";
+import { StyleSheet } from "react-native";
 import { StatusBar } from "expo-status-bar";
 import { SafeAreaView, SafeAreaProvider } from "react-native-safe-area-context";
 import {
@@ -8,6 +8,7 @@ import {
   Inter_700Bold,
 } from "@expo-google-fonts/inter";
 import * as SplashScreen from "expo-splash-screen";
+import Toast from "react-native-toast-message";
 
 import Router from "./src/Router";
 import { UserRouterProvider } from "./src/context/UserRouter";
@@ -39,6 +40,7 @@ const App: React.FC = () => {
               backgroundColor={color.interface.backgroundColor}
             />
             <Router />
+            <Toast position="top" topOffset={70} />
           </UserRouterProvider>
         </CoursesCollegeProvider>
       </SafeAreaView>

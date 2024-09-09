@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { KeyboardAvoidingView, Platform, ScrollView } from "react-native";
+import Toast from "react-native-toast-message";
+
 import * as S from "./styles";
 import { FormRegistrationCollegeProps } from "types/FormRegistrationCollegeProps";
 
@@ -27,6 +29,15 @@ export default function FormRegistrationCollege() {
       return false;
     }
   }
+
+  const showToast = () => {
+    Toast.show({
+      type: "error",
+      text1: "Atenção",
+      text2:
+        "Para efetivar a matrícula, preencha todos os campos do formulário.",
+    });
+  };
 
   useEffect(() => {
     return () => {
@@ -94,10 +105,21 @@ export default function FormRegistrationCollege() {
           </S.containerInputs>
 
           <S.containerBtn>
-            <S.btnRegister canSave={canSave()} onPress={() => {}}>
+            <S.btnRegister
+              canSave={canSave()}
+              onPress={() => {
+                if (canSave()) {
+                  console.warn("salvando");
+                } else {
+                  showToast();
+                }
+              }}
+            >
               <S.btnText>Confirmar</S.btnText>
             </S.btnRegister>
           </S.containerBtn>
+
+          <Toast position="bottom" bottomOffset={70} />
         </S.container>
       </ScrollView>
     </KeyboardAvoidingView>
