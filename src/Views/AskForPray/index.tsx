@@ -1,11 +1,11 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Toast from "react-native-toast-message";
 import { Switch, StyleSheet, Platform } from "react-native";
 
 import * as S from "./styles";
 import { color } from "styles/pallete";
 import { FormAskPorPrayProps } from "types/FormAskPorPrayProps";
-import SelectInput from "components/SelectInput";
+import SelectInput, { itemPicker } from "components/SelectInput";
 import { typesPray } from "./obj";
 
 const initialStateDataForm: FormAskPorPrayProps = {
@@ -19,13 +19,17 @@ const initialStateDataForm: FormAskPorPrayProps = {
 
 export default function AskForPray() {
   const [dataForm, setDataForm] = useState(initialStateDataForm);
+  console.log("dataForm: ", dataForm);
+  const [typeAsk, setTypeAsk] = useState<itemPicker>({ id: 999, value: "" });
+  console.log("typeAsk: ", typeAsk);
 
   function canSave() {
     if (
       dataForm.name !== "" &&
       dataForm.tel !== "" &&
       dataForm.email !== "" &&
-      dataForm.goal !== ""
+      dataForm.goal !== "" &&
+      typeAsk.value !== ""
     ) {
       return true;
     } else {
@@ -42,10 +46,16 @@ export default function AskForPray() {
     });
   };
 
+  useEffect(() => {
+    if (typeAsk.value !== "") {
+      setDataForm((itens) => ({ ...itens, type: typeAsk.id }));
+    }
+  }, [typeAsk]);
+
   return (
     <S.container>
       <S.inputs>
-        <SelectInput data={typesPray} />
+        <SelectInput data={typesPray} getOptionPicked={setTypeAsk} />
         <S.textInput
           value={dataForm.name}
           onChangeText={(newText) => {

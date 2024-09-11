@@ -6,16 +6,20 @@ import * as S from "./styles";
 import ModalComp from "components/ModalComp";
 import { color } from "styles/pallete";
 
-interface itemPicker {
+export interface itemPicker {
   id: number;
   value: string;
 }
 
 interface SelectInputProps {
   data: itemPicker[];
+  getOptionPicked: React.Dispatch<React.SetStateAction<itemPicker>>;
 }
 
-export default function SelectInput({ data }: SelectInputProps) {
+export default function SelectInput({
+  data,
+  getOptionPicked,
+}: SelectInputProps) {
   const [modalIosOpen, setModalIosOpen] = useState(false);
   const [valueSelected, setValueSelected] = useState({ id: 999, value: "" });
 
@@ -42,6 +46,7 @@ export default function SelectInput({ data }: SelectInputProps) {
                 );
                 if (itemSelected.length > 0) {
                   setValueSelected(itemSelected[0]);
+                  getOptionPicked(itemSelected[0]);
                 }
               }}
             >
@@ -70,6 +75,7 @@ export default function SelectInput({ data }: SelectInputProps) {
               const itemSelected = data.filter((item) => item.id === itemIndex);
               if (itemSelected.length > 0) {
                 setValueSelected(itemSelected[0]);
+                getOptionPicked(itemSelected[0]);
               }
             }}
             style={{ color: color.interface.white }}
