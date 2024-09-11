@@ -5,6 +5,8 @@ import { Switch, StyleSheet, Platform } from "react-native";
 import * as S from "./styles";
 import { color } from "styles/pallete";
 import { FormAskPorPrayProps } from "types/FormAskPorPrayProps";
+import SelectInput from "components/SelectInput";
+import { typesPray } from "./obj";
 
 const initialStateDataForm: FormAskPorPrayProps = {
   name: "",
@@ -43,6 +45,7 @@ export default function AskForPray() {
   return (
     <S.container>
       <S.inputs>
+        <SelectInput data={typesPray} />
         <S.textInput
           value={dataForm.name}
           onChangeText={(newText) => {
