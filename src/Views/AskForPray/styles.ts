@@ -27,6 +27,16 @@ export const textInput = styled.TextInput`
   color: ${color.interface.white};
 `;
 
+export const textArea = styled.TextInput`
+  width: 100%;
+  height: 200px;
+  padding: ${RFPercentage(2)}px;
+  border: 1px;
+  border-color: ${color.interface.white};
+  border-radius: 5px;
+  color: ${color.interface.white};
+`;
+
 export const containerInputs = styled.View`
   width: 100%;
   align-content: center;

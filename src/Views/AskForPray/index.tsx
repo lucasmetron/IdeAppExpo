@@ -89,7 +89,7 @@ export default function AskForPray() {
           returnKeyType="done"
         />
 
-        <S.textInput
+        <S.textArea
           value={dataForm.goal}
           onChangeText={(newText) => {
             setDataForm((item) => ({ ...item, goal: newText }));
@@ -98,6 +98,8 @@ export default function AskForPray() {
           placeholder="Motivo da oração"
           placeholderTextColor="white"
           returnKeyType="done"
+          multiline={true}
+          numberOfLines={4}
         />
 
         <S.toggleWpp>
