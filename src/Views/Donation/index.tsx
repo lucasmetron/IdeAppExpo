@@ -36,7 +36,9 @@ export default function Donation() {
       <S.title>Projetos e Açoes</S.title>
 
       <S.boxDonation>
-        <TouchableOpacity onPress={() => redirect("https://pag.ae/bjBxwtSF")}>
+        <TouchableOpacity
+          onPress={() => redirect("https://idevangelho.com/contribuicao.php")}
+        >
           <S.itemDonation>
             <S.Img source={require("../../assets/africa.jpg")} />
             <S.donationText>Projeto África</S.donationText>
