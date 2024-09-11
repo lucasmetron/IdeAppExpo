@@ -6,7 +6,7 @@ import { fontsName } from "styles/fonts";
 
 export const container = styled.View`
   flex: 1;
-  padding: ${RFPercentage(1)}px;
+  padding: ${RFPercentage(1.5)}px;
   gap: ${RFPercentage(1)}px;
   background-color: ${color.interface.backgroundColor2};
   justify-content: space-between;
