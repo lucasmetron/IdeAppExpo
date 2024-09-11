@@ -1,12 +1,13 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
 import React from "react";
-import { FlatList } from "react-native";
+import { FlatList, Share, Platform } from "react-native";
 import MaterialIcons from "react-native-vector-icons/MaterialIcons";
 import Ionicons from "react-native-vector-icons/Ionicons";
 import AntDesign from "react-native-vector-icons/AntDesign";
 import { RFPercentage } from "react-native-responsive-fontsize";
 import { useNavigation } from "@react-navigation/native";
+import * as Sharing from "expo-sharing";
 
 import * as S from "./styles";
 import { color } from "styles/pallete";
@@ -16,11 +17,41 @@ import { ItemListProps } from "types/ItemMoreProps";
 export default function More() {
   const navigator: any = useNavigation();
 
+  const androidLink = "https://www.google.com/br";
+  const iosLink = "https://www.apple.com/br";
+
+  const handleShare = async () => {
+    try {
+      const result = await Share.share({
+        url: Platform.OS === "ios" ? iosLink : androidLink,
+      });
+
+      if (result.action === Share.sharedAction) {
+        if (result.activityType) {
+          // Compartilhado com uma atividade específica (apenas iOS)
+          console.log("Compartilhado via: ", result.activityType);
+        } else {
+          // Compartilhado
+          console.log("Compartilhado");
+        }
+      } else if (result.action === Share.dismissedAction) {
+        // Cancelado
+        console.log("Compartilhamento cancelado");
+      }
+    } catch (error) {
+      console.error("Erro ao compartilhar:", error);
+    }
+  };
+
   function returnItem(value: ItemListProps) {
     return (
       <S.itemMore
         onPress={() => {
-          navigator.navigate(value.route);
+          if (value.id === "5") {
+            handleShare();
+          } else {
+            navigator.navigate(value.route);
+          }
         }}
       >
         {value.name === "Pedidos de Oração" ? (
