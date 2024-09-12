@@ -2,12 +2,12 @@ import { stacksMore } from "Router/routes";
 import { ItemListProps } from "types/ItemMoreProps";
 
 export const list: ItemListProps[] = [
-  {
-    id: "1",
-    icon: "event-note",
-    name: "Agenda",
-    route: stacksMore.schedule,
-  },
+  // {
+  //   id: "1",
+  //   icon: "event-note",
+  //   name: "Agenda",
+  //   route: stacksMore.schedule,
+  // },
   {
     id: "2",
     icon: "web-asset",
