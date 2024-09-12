@@ -1,10 +1,10 @@
-import styled from 'styled-components/native'
-import { Dimensions } from 'react-native'
-import { color } from '../../styles/pallete'
+import styled from "styled-components/native";
+import { Dimensions } from "react-native";
+import { color } from "../../styles/pallete";
 
 export const container = styled.View`
   background-color: ${color.interface.backgroundColor};
-  height: ${Dimensions.get('window').height * 0.065}px;
+  height: ${Dimensions.get("window").height * 0.055}px;
   flex-direction: row;
   gap: 5px;
   align-items: center;
@@ -12,4 +12,4 @@ export const container = styled.View`
   padding-top: 5px;
   padding-left: 10px;
   padding-right: 10px;
-`
+`;

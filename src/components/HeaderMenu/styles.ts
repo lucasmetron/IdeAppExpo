@@ -11,6 +11,7 @@ export const container = styled.View`
   align-items: center;
   justify-content: center;
   gap: 5px;
+  /* background-color: red; */
 `;
 
 export const titleChurch = styled.Text`
@@ -20,8 +21,9 @@ export const titleChurch = styled.Text`
 `;
 
 export const image = styled.Image`
-  width: ${Dimensions.get("window").width * 0.08}px;
-  height: ${Dimensions.get("window").width * 0.08}px;
+  width: ${Dimensions.get("window").width * 0.09}px;
+  height: ${Dimensions.get("window").width * 0.09}px;
+  margin-bottom: 5px;
 `;
 
 export const btnLogin = styled.TouchableOpacity`
