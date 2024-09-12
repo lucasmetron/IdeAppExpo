@@ -11,7 +11,10 @@ export default function Content() {
 
   return (
     <S.container>
-      <VitrineContents />
+      <VitrineContents title="Mais populares" />
+      <VitrineContents title="Adicionados recentemente" />
+      <VitrineContents title="Celulas" />
+      <VitrineContents title="Sermoes de domingo" />
     </S.container>
   );
 }
