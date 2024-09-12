@@ -37,9 +37,16 @@ export const content = styled.TouchableOpacity`
   gap: ${RFPercentage(0.5)}px;
 `;
 
-export const imgContent = styled.Image`
+export const imgContent = styled.View`
   width: 100%;
   height: 55%;
+  background-color: ${color.interface.backgroundColor2};
+  border-radius: 5px;
+`;
+
+export const img = styled.Image`
+  width: 100%;
+  height: 100%;
   background-color: ${color.interface.backgroundColor2};
   border-radius: 5px;
 `;

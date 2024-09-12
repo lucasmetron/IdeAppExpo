@@ -16,7 +16,9 @@ export default function VitrineContents({ title }: VitrineContentsProps) {
         <S.title numberOfLines={1}>{title}</S.title>
         <S.scroll horizontal showsHorizontalScrollIndicator={false}>
           <S.content>
-            <S.imgContent source={{ uri: linkImg }} />
+            <S.imgContent>
+              <S.img source={{ uri: linkImg }} />
+            </S.imgContent>
             <S.titleContent numberOfLines={2}>Geracao dopamina</S.titleContent>
             <S.subTitleContent numberOfLines={1}>
               Viciados no prazer!
@@ -24,7 +26,9 @@ export default function VitrineContents({ title }: VitrineContentsProps) {
           </S.content>
 
           <S.content>
-            <S.imgContent source={{ uri: linkImg }} />
+            <S.imgContent>
+              <S.img source={{ uri: linkImg }} />
+            </S.imgContent>
             <S.titleContent numberOfLines={2}>
               Quem voce esta seguindo?
             </S.titleContent>
@@ -32,7 +36,9 @@ export default function VitrineContents({ title }: VitrineContentsProps) {
           </S.content>
 
           <S.content>
-            <S.imgContent source={{ uri: linkImg }} />
+            <S.imgContent>
+              <S.img source={{ uri: linkImg }} />
+            </S.imgContent>
             <S.titleContent numberOfLines={2}>
               Quando menos e mais
             </S.titleContent>
