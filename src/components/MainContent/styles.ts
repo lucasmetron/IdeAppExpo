@@ -17,7 +17,6 @@ export const title = styled.Text`
 
 export const content = styled.TouchableOpacity`
   flex: 1;
-  height: 200px;
   align-items: flex-start;
   justify-content: space-between;
   background-color: ${color.interface.backgroundColor};
@@ -25,7 +24,7 @@ export const content = styled.TouchableOpacity`
 `;
 
 export const imgContent = styled.View`
-  flex: 1;
+  flex: 2.5;
   width: 100%;
   height: 70%;
   background-color: ${color.interface.backgroundColor2};
@@ -40,12 +39,13 @@ export const img = styled.Image`
 `;
 
 export const textsCard = styled.View`
-  padding: ${RFPercentage(1.5)}px;
+  padding: ${RFPercentage(1)}px;
   width: 100%;
+  flex: 1;
 `;
 
 export const titleContent = styled.Text`
-  font-size: ${RFPercentage(3.5)}px;
+  font-size: ${RFPercentage(2.8)}px;
   font-family: ${fontsName.title};
   color: ${color.interface.white};
 `;

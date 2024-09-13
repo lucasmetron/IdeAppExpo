@@ -26,7 +26,7 @@ export default function MainContent({ data }: MainContentProps) {
           renderItem={({ item, index }) => (
             <S.content key={index}>
               <S.imgContent>
-                <S.img source={{ uri: item.img }} />
+                <S.img resizeMode="cover" source={{ uri: item.img }} />
               </S.imgContent>
 
               <S.textsCard>

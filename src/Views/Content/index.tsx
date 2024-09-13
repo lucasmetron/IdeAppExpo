@@ -42,7 +42,19 @@ export default function Content() {
       subtitle: faker.lorem.slug(2),
     },
     {
+      title: faker.lorem.slug(3),
+      content: faker.lorem.paragraph(5),
+      img: faker.image.url({ width: 500, height: 300 }),
+      subtitle: faker.lorem.slug(2),
+    },
+    {
       title: faker.lorem.text(),
+      content: faker.lorem.paragraph(5),
+      img: faker.image.url({ width: 500, height: 300 }),
+      subtitle: faker.lorem.slug(2),
+    },
+    {
+      title: faker.lorem.slug(3),
       content: faker.lorem.paragraph(5),
       img: faker.image.url({ width: 500, height: 300 }),
       subtitle: faker.lorem.slug(2),
@@ -73,18 +85,6 @@ export default function Content() {
   const data4: ContentProps[] = [
     {
       title: faker.lorem.slug(3),
-      content: faker.lorem.paragraph(5),
-      img: faker.image.url({ width: 500, height: 300 }),
-      subtitle: faker.lorem.slug(2),
-    },
-    {
-      title: faker.lorem.text(),
-      content: faker.lorem.paragraph(5),
-      img: faker.image.url({ width: 500, height: 300 }),
-      subtitle: faker.lorem.slug(2),
-    },
-    {
-      title: faker.lorem.text(),
       content: faker.lorem.paragraph(5),
       img: faker.image.url({ width: 500, height: 300 }),
       subtitle: faker.lorem.slug(2),

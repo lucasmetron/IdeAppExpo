@@ -18,7 +18,7 @@ export default function VitrineContents({ title, data }: VitrineContentsProps) {
             data.map((item, i) => (
               <S.content key={i}>
                 <S.imgContent>
-                  <S.img source={{ uri: item.img }} />
+                  <S.img resizeMode="cover" source={{ uri: item.img }} />
                 </S.imgContent>
                 <S.titleContent numberOfLines={2}>{item.title}</S.titleContent>
                 <S.subTitleContent numberOfLines={1}>
