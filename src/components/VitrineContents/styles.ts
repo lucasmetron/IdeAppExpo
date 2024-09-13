@@ -24,7 +24,7 @@ export const scroll = styled.ScrollView`
 `;
 
 export const title = styled.Text`
-  font-size: ${RFPercentage(2)}px;
+  font-size: ${RFPercentage(2.8)}px;
   font-family: ${fontsName.title};
   color: ${color.interface.white};
 `;
