@@ -41,14 +41,14 @@ export const content = styled.TouchableOpacity`
 export const imgContent = styled.View`
   width: 100%;
   height: 55%;
-  background-color: ${color.interface.backgroundColor2};
+  background-color: ${color.interface.backgroundColor};
   border-radius: 5px;
 `;
 
 export const img = styled.Image`
   width: 100%;
   height: 100%;
-  background-color: ${color.interface.backgroundColor2};
+  background-color: ${color.interface.backgroundColor};
   border-radius: 5px;
 `;
 

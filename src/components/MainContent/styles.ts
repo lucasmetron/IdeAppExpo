@@ -27,14 +27,14 @@ export const imgContent = styled.View`
   flex: 1;
   width: 100%;
   height: 70%;
-  background-color: ${color.interface.backgroundColor2};
+  background-color: ${color.interface.backgroundColor};
   border-radius: 5px;
 `;
 
 export const img = styled.Image`
   width: 100%;
   height: 100%;
-  background-color: ${color.interface.backgroundColor2};
+  background-color: ${color.interface.backgroundColor};
   border-radius: 5px;
 `;
 
