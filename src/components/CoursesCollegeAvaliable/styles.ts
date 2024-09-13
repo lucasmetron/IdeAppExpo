@@ -48,6 +48,7 @@ export const imgBox = styled.View`
   width: 100%;
   gap: 3px;
   background-color: ${color.interface.backgroundColor};
+  border-radius: 5px;
 `;
 
 export const infos = styled.View`
