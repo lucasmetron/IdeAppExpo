@@ -3,4 +3,5 @@ export interface ContentProps {
   title: string;
   subtitle: string;
   content: string;
+  creator: string;
 }
