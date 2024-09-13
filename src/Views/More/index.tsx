@@ -22,22 +22,9 @@ export default function More() {
 
   const handleShare = async () => {
     try {
-      const result = await Share.share({
+      await Share.share({
         url: Platform.OS === "ios" ? iosLink : androidLink,
       });
-
-      if (result.action === Share.sharedAction) {
-        if (result.activityType) {
-          // Compartilhado com uma atividade específica (apenas iOS)
-          console.log("Compartilhado via: ", result.activityType);
-        } else {
-          // Compartilhado
-          console.log("Compartilhado");
-        }
-      } else if (result.action === Share.dismissedAction) {
-        // Cancelado
-        console.log("Compartilhamento cancelado");
-      }
     } catch (error) {
       console.error("Erro ao compartilhar:", error);
     }

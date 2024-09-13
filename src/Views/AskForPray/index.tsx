@@ -19,9 +19,7 @@ const initialStateDataForm: FormAskPorPrayProps = {
 
 export default function AskForPray() {
   const [dataForm, setDataForm] = useState(initialStateDataForm);
-  console.log("dataForm: ", dataForm);
   const [typeAsk, setTypeAsk] = useState<itemPicker>({ id: 999, value: "" });
-  console.log("typeAsk: ", typeAsk);
 
   function canSave() {
     if (

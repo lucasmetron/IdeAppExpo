@@ -1,95 +1,11 @@
 import React from "react";
-import { faker } from "@faker-js/faker";
 
 import * as S from "./styles";
 import VitrineContents from "components/VitrineContents";
 import MainContent from "components/MainContent";
-import { ContentProps } from "types/ContentProps";
+import { data, data2, data3, data4 } from "./objsFake";
 
 export default function Content() {
-  const data: ContentProps[] = [
-    {
-      title: faker.lorem.words(),
-      content: faker.lorem.paragraph(5),
-      img: faker.image.url({ width: 500, height: 300 }),
-      subtitle: faker.lorem.slug(2),
-    },
-    {
-      title: faker.lorem.words(),
-      content: faker.lorem.paragraph(5),
-      img: faker.image.url({ width: 500, height: 300 }),
-      subtitle: faker.lorem.slug(2),
-    },
-    {
-      title: faker.lorem.words(),
-      content: faker.lorem.paragraph(5),
-      img: faker.image.url({ width: 500, height: 300 }),
-      subtitle: faker.lorem.slug(2),
-    },
-    {
-      title: faker.lorem.words(),
-      content: faker.lorem.paragraph(5),
-      img: faker.image.url({ width: 500, height: 300 }),
-      subtitle: faker.lorem.slug(2),
-    },
-  ];
-
-  const data2: ContentProps[] = [
-    {
-      title: faker.lorem.slug(3),
-      content: faker.lorem.paragraph(5),
-      img: faker.image.url({ width: 500, height: 300 }),
-      subtitle: faker.lorem.slug(2),
-    },
-    {
-      title: faker.lorem.slug(3),
-      content: faker.lorem.paragraph(5),
-      img: faker.image.avatar(),
-      subtitle: faker.lorem.slug(2),
-    },
-    {
-      title: faker.lorem.words(),
-      content: faker.lorem.paragraph(5),
-      img: faker.image.url({ width: 500, height: 300 }),
-      subtitle: faker.lorem.slug(2),
-    },
-    {
-      title: faker.lorem.slug(3),
-      content: faker.lorem.paragraph(5),
-      img: faker.image.url({ width: 500, height: 300 }),
-      subtitle: faker.lorem.slug(2),
-    },
-  ];
-
-  const data3: ContentProps[] = [
-    {
-      title: faker.lorem.slug(3),
-      content: faker.lorem.paragraph(5),
-      img: faker.image.url({ width: 500, height: 300 }),
-      subtitle: faker.lorem.slug(2),
-    },
-    {
-      title: faker.lorem.words(),
-      content: faker.lorem.paragraph(5),
-      img: faker.image.url({ width: 500, height: 300 }),
-      subtitle: faker.lorem.slug(2),
-    },
-    {
-      title: faker.lorem.words(),
-      content: faker.lorem.paragraph(5),
-      img: faker.image.url({ width: 500, height: 300 }),
-      subtitle: faker.lorem.slug(2),
-    },
-  ];
-
-  const data4: ContentProps[] = [
-    {
-      title: faker.lorem.slug(3),
-      content: faker.lorem.paragraph(5),
-      img: faker.image.url({ width: 500, height: 300 }),
-      subtitle: faker.lorem.slug(2),
-    },
-  ];
   return (
     <S.container>
       <MainContent data={data} />
