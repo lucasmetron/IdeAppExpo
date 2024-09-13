@@ -12,7 +12,7 @@ export const container = styled.ScrollView`
 
 export const img = styled.Image`
   width: 100%;
-  height: ${Dimensions.get("window").height * 0.4};
+  height: ${Dimensions.get("window").height * 0.4}px;
   background-color: ${color.interface.backgroundColor};
   margin-bottom: ${RFPercentage(1)}px;
 `;
@@ -23,6 +23,7 @@ export const contentBox = styled.View`
 `;
 
 export const iconAndText = styled.View`
+  width: 100%;
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
@@ -30,7 +31,7 @@ export const iconAndText = styled.View`
 `;
 
 export const titleContent = styled.Text`
-  padding-right: ${RFPercentage(1.5)}px;
+  flex: 1;
   align-items: center;
   justify-content: center;
   font-size: ${RFPercentage(3)}px;
@@ -41,6 +42,7 @@ export const titleContent = styled.Text`
 `;
 
 export const creator = styled.Text`
+  flex: 1;
   width: 100%;
   font-size: ${RFPercentage(2)}px;
   font-family: ${fontsName.text};
@@ -59,7 +61,7 @@ export const line = styled.View`
 `;
 
 export const contentText = styled.Text`
-  font-size: ${RFPercentage(1.5)}px;
+  font-size: ${RFPercentage(1.8)}px;
   font-family: ${fontsName.text};
   color: ${color.interface.white};
   text-align: justify;

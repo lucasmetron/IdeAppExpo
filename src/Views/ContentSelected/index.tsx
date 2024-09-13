@@ -34,6 +34,7 @@ export default function ContentSelected() {
         </S.iconAndText>
 
         <S.line />
+
         <S.contentText>{contentSelected?.content}</S.contentText>
       </S.contentBox>
     </S.container>

@@ -18,7 +18,6 @@ import HeaderContent from "components/HeaderContent";
 
 export default function HeaderApp() {
   const route = useRoute();
-  console.log("route: ", route);
 
   function returnHeaderCorrect() {
     switch (route.name) {
