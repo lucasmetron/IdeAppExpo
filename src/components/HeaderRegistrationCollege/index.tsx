@@ -9,13 +9,7 @@ import CoursesCollegeContext from "context/CoursesCollege";
 import { RouteProps } from "types/RouteProps";
 import { color } from "styles/pallete";
 
-interface HeaderRegistrationCollegeProps {
-  route: RouteProps;
-}
-
-export default function HeaderRegistrationCollege({
-  route,
-}: HeaderRegistrationCollegeProps) {
+export default function HeaderRegistrationCollege() {
   const { courseSelected } = useContext(CoursesCollegeContext);
   const navigator = useNavigation();
 

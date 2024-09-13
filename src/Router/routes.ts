@@ -18,7 +18,7 @@ export const stacksHome = {
 
 export const stacksContent = {
   content: "stacksContent-Conteúdo",
-  teste: "stacksContent-test",
+  contentSelected: "stacksContent-ContentSelected",
 };
 
 export const stacksCollege = {

@@ -17,6 +17,7 @@ import HeaderRegistrationCollege from "components/HeaderRegistrationCollege";
 
 export default function HeaderApp() {
   const route = useRoute();
+  console.log("route: ", route);
 
   function returnHeaderCorrect() {
     switch (route.name) {
@@ -39,12 +40,12 @@ export default function HeaderApp() {
       case stacksMore.share:
       case stacksMore.talkToUs:
       case stacksHome.teste:
-      case stacksContent.teste:
       case stacksMain.teste:
+      case stacksContent.contentSelected:
         return <HeaderDefault route={route} showBackArrow />;
 
       case stacksCollege.registrationCollege:
-        return <HeaderRegistrationCollege route={route} />;
+        return <HeaderRegistrationCollege />;
 
       default:
         return <HeaderDefault route={route} />;
