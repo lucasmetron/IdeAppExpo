@@ -24,7 +24,7 @@ export const content = styled.TouchableOpacity`
 `;
 
 export const imgContent = styled.View`
-  flex: 2.5;
+  flex: 1;
   width: 100%;
   height: 70%;
   background-color: ${color.interface.backgroundColor2};
@@ -41,7 +41,6 @@ export const img = styled.Image`
 export const textsCard = styled.View`
   padding: ${RFPercentage(1)}px;
   width: 100%;
-  flex: 1;
 `;
 
 export const titleContent = styled.Text`

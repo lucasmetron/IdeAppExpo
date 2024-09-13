@@ -30,7 +30,7 @@ export default function MainContent({ data }: MainContentProps) {
               </S.imgContent>
 
               <S.textsCard>
-                <S.titleContent numberOfLines={2}>{item.title}</S.titleContent>
+                <S.titleContent numberOfLines={1}>{item.title}</S.titleContent>
                 <S.subTitleContent numberOfLines={1}>
                   {item.subtitle}
                 </S.subTitleContent>
