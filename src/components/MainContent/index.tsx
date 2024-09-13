@@ -38,7 +38,7 @@ export default function MainContent({ data }: MainContentProps) {
               }}
             >
               <S.imgContent>
-                <S.img resizeMode="cover" source={{ uri: item.img }} />
+                <S.img resizeMode="stretch" source={{ uri: item.img }} />
               </S.imgContent>
 
               <S.textsCard>
