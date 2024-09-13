@@ -14,6 +14,7 @@ import {
 import HeaderMenu from "components/HeaderMenu";
 import HeaderDefault from "components/HeaderDefault";
 import HeaderRegistrationCollege from "components/HeaderRegistrationCollege";
+import HeaderContent from "components/HeaderContent";
 
 export default function HeaderApp() {
   const route = useRoute();
@@ -33,6 +34,9 @@ export default function HeaderApp() {
       case tabsRoutes.more.name:
         return <HeaderDefault route={route} />;
 
+      case stacksContent.contentSelected:
+        return <HeaderContent />;
+
       case stacksMore.schedule:
       case stacksMore.ourPages:
       case stacksMore.askForPray:
@@ -41,7 +45,6 @@ export default function HeaderApp() {
       case stacksMore.talkToUs:
       case stacksHome.teste:
       case stacksMain.teste:
-      case stacksContent.contentSelected:
         return <HeaderDefault route={route} showBackArrow />;
 
       case stacksCollege.registrationCollege:

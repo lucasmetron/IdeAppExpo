@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useNavigation } from "@react-navigation/native";
 
 import * as S from "./styles";
 import { ContentProps } from "types/ContentProps";
 import { stacksContent } from "Router/routes";
+import ContentContext from "context/ContentContext";
+
 interface VitrineContentsProps {
   title: string;
   data: ContentProps[];
@@ -11,6 +13,7 @@ interface VitrineContentsProps {
 
 export default function VitrineContents({ title, data }: VitrineContentsProps) {
   const navigate: any = useNavigation();
+  const { setContentSelected } = useContext(ContentContext);
 
   return (
     <S.container>
@@ -21,7 +24,10 @@ export default function VitrineContents({ title, data }: VitrineContentsProps) {
             data.map((item, i) => (
               <S.content
                 key={i}
-                onPress={() => navigate.navigate(stacksContent.contentSelected)}
+                onPress={() => {
+                  navigate.navigate(stacksContent.contentSelected);
+                  setContentSelected(item);
+                }}
               >
                 <S.imgContent>
                   <S.img resizeMode="cover" source={{ uri: item.img }} />

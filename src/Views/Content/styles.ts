@@ -8,3 +8,10 @@ export const container = styled.ScrollView`
   padding: ${RFPercentage(1.5)}px;
   background-color: ${color.interface.backgroundColor2};
 `;
+
+export const loadContainer = styled.View`
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  background-color: ${color.interface.backgroundColor2};
+`;

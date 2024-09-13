@@ -5,11 +5,11 @@ import EvilIcons from "react-native-vector-icons/EvilIcons";
 import { RFPercentage } from "react-native-responsive-fontsize";
 
 import * as S from "./styles";
-import CoursesCollegeContext from "context/CoursesCollege";
+import ContentContext from "context/ContentContext";
 import { color } from "styles/pallete";
 
-export default function HeaderRegistrationCollege() {
-  const { courseSelected } = useContext(CoursesCollegeContext);
+export default function HeaderContent() {
+  const { contentSelected } = useContext(ContentContext);
   const navigator = useNavigation();
 
   return (
@@ -23,16 +23,8 @@ export default function HeaderRegistrationCollege() {
       </S.btnGoBack>
 
       <S.title numberOfLines={1}>
-        {courseSelected?.nome_curso || "Curso college"}
+        {contentSelected?.title || "Contéudo"}
       </S.title>
-
-      <S.btnShare>
-        <EvilIcons
-          name="share-google"
-          color={color.interface.white}
-          size={RFPercentage(4)}
-        />
-      </S.btnShare>
     </S.container>
   );
 }
