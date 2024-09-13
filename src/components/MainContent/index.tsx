@@ -3,9 +3,15 @@ import { Text, View, Dimensions } from "react-native";
 import Carousel from "react-native-reanimated-carousel";
 
 import * as S from "./styles";
+import { ContentProps } from "types/ContentProps";
 
-export default function MainContent() {
+interface MainContentProps {
+  data: ContentProps[];
+}
+
+export default function MainContent({ data }: MainContentProps) {
   const width = Dimensions.get("window").width;
+  const height = Dimensions.get("window").height;
   return (
     <S.container>
       <S.title numberOfLines={1}>Em destaque</S.title>
@@ -14,21 +20,22 @@ export default function MainContent() {
           mode="parallax"
           loop
           width={width}
-          height={width / 2}
+          height={height * 0.35}
           autoPlay={false}
-          data={[...new Array(6).keys()]}
-          scrollAnimationDuration={1000}
-          onSnapToItem={(index) => console.log("current index:", index)}
-          renderItem={({ index }) => (
-            <View
-              style={{
-                flex: 1,
-                borderWidth: 1,
-                justifyContent: "center",
-              }}
-            >
-              <Text style={{ textAlign: "center", fontSize: 30 }}>{index}</Text>
-            </View>
+          data={data}
+          renderItem={({ item, index }) => (
+            <S.content key={index}>
+              <S.imgContent>
+                <S.img source={{ uri: item.img }} />
+              </S.imgContent>
+
+              <S.textsCard>
+                <S.titleContent numberOfLines={2}>{item.title}</S.titleContent>
+                <S.subTitleContent numberOfLines={1}>
+                  {item.subtitle}
+                </S.subTitleContent>
+              </S.textsCard>
+            </S.content>
           )}
         />
       </View>
