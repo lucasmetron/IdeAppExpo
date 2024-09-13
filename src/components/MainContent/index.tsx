@@ -15,7 +15,7 @@ export default function MainContent({ data }: MainContentProps) {
   return (
     <S.container>
       <S.title numberOfLines={1}>Em destaque</S.title>
-      <View style={{ flex: 1 }}>
+      <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
         <Carousel
           mode="parallax"
           loop
