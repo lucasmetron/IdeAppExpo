@@ -15,6 +15,7 @@ import HeaderMenu from "components/HeaderMenu";
 import HeaderDefault from "components/HeaderDefault";
 import HeaderRegistrationCollege from "components/HeaderRegistrationCollege";
 import HeaderContent from "components/HeaderContent";
+import HeaderHomeContent from "components/HeaderHomeContent";
 
 export default function HeaderApp() {
   const route = useRoute();
@@ -34,8 +35,10 @@ export default function HeaderApp() {
         return <HeaderDefault route={route} />;
 
       case stacksContent.contentSelected:
-      case stacksHome.contentSelected:
         return <HeaderContent />;
+
+      case stacksHome.contentSelected:
+        return <HeaderHomeContent />;
 
       case stacksMore.schedule:
       case stacksMore.ourPages:

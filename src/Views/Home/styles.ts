@@ -14,3 +14,9 @@ export const fakeGap = styled.SafeAreaView`
   height: ${RFPercentage(3)}px;
   background-color: ${color.interface.backgroundColor2};
 `;
+
+export const boxVitrine = styled.View`
+  width: 100%;
+  padding-left: ${RFPercentage(1.5)}px;
+  padding-right: ${RFPercentage(1.5)}px;
+`;

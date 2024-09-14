@@ -4,7 +4,7 @@ import { createStackNavigator } from "@react-navigation/stack";
 import { stacksHome } from "Router/routes";
 import HeaderApp from "components/HeaderApp";
 import Home from "Views/Home";
-import ContentSelected from "Views/ContentSelected";
+import HomeContent from "Views/HomeContent";
 
 const StackMore = createStackNavigator();
 
@@ -25,7 +25,7 @@ export default function StackHome() {
       <StackMore.Screen name={stacksHome.home} component={Home} />
       <StackMore.Screen
         name={stacksHome.contentSelected}
-        component={ContentSelected}
+        component={HomeContent}
       />
     </StackMore.Navigator>
   );

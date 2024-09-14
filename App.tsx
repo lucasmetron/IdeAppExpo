@@ -15,6 +15,7 @@ import { UserRouterProvider } from "./src/context/UserRouter";
 import { CoursesCollegeProvider } from "context/CoursesCollege";
 import { ContentProvider } from "context/ContentContext";
 import { color } from "styles/pallete";
+import { HomeContentProvider } from "context/HomeContentContext";
 
 const App: React.FC = () => {
   const [fontsLoaded] = useFonts({ Inter_400Regular, Inter_700Bold });
@@ -34,18 +35,20 @@ const App: React.FC = () => {
         edges={["top", "bottom", "left", "right"]}
         onLayout={onLayputRootView}
       >
-        <ContentProvider>
-          <CoursesCollegeProvider>
-            <UserRouterProvider>
-              <StatusBar
-                style="light"
-                backgroundColor={color.interface.backgroundColor}
-              />
-              <Router />
-              <Toast position="top" topOffset={70} />
-            </UserRouterProvider>
-          </CoursesCollegeProvider>
-        </ContentProvider>
+        <HomeContentProvider>
+          <ContentProvider>
+            <CoursesCollegeProvider>
+              <UserRouterProvider>
+                <StatusBar
+                  style="light"
+                  backgroundColor={color.interface.backgroundColor}
+                />
+                <Router />
+                <Toast position="top" topOffset={70} />
+              </UserRouterProvider>
+            </CoursesCollegeProvider>
+          </ContentProvider>
+        </HomeContentProvider>
       </SafeAreaView>
     </SafeAreaProvider>
   );

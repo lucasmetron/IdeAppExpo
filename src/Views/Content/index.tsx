@@ -6,9 +6,10 @@ import MainContent from "components/MainContent";
 import { data, data2, data3, data4 } from "./objsFake";
 import ContentContext from "context/ContentContext";
 import LoadScreen from "components/LoadScreen";
+import { stacksContent } from "Router/routes";
 
 export default function Content() {
-  const { isLoadContent } = useContext(ContentContext);
+  const { isLoadContent, setContentSelected } = useContext(ContentContext);
   return isLoadContent ? (
     <S.loadContainer>
       <LoadScreen text="Carregando Contéudo" />
@@ -17,9 +18,24 @@ export default function Content() {
     <>
       <S.container>
         <MainContent data={data} />
-        <VitrineContents title="Adicionados recentemente" data={data2} />
-        <VitrineContents title="Células" data={data3} />
-        <VitrineContents title="Sermões de domingo" data={data4} />
+        <VitrineContents
+          selectFunction={setContentSelected}
+          navigateTo={stacksContent.contentSelected}
+          title="Adicionados recentemente"
+          data={data2}
+        />
+        <VitrineContents
+          selectFunction={setContentSelected}
+          navigateTo={stacksContent.contentSelected}
+          title="Células"
+          data={data3}
+        />
+        <VitrineContents
+          selectFunction={setContentSelected}
+          navigateTo={stacksContent.contentSelected}
+          title="Sermões de domingo"
+          data={data4}
+        />
       </S.container>
     </>
   );

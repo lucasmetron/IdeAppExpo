@@ -3,16 +3,19 @@ import { useNavigation } from "@react-navigation/native";
 
 import * as S from "./styles";
 import { ContentProps } from "types/ContentProps";
-import { stacksContent } from "Router/routes";
 import ContentContext from "context/ContentContext";
 
 interface VitrineContentsProps {
   data: ContentProps[];
+  navigateTo: string;
+  selectFunction: React.Dispatch<React.SetStateAction<ContentProps | null>>;
   title?: string;
 }
 
 export default function VitrineContents({
   data,
+  navigateTo,
+  selectFunction,
   title = "",
 }: VitrineContentsProps) {
   const navigate: any = useNavigation();
@@ -28,8 +31,8 @@ export default function VitrineContents({
               <S.content
                 key={i}
                 onPress={() => {
-                  navigate.navigate(stacksContent.contentSelected);
-                  setContentSelected(item);
+                  navigate.navigate(navigateTo);
+                  selectFunction(item);
                 }}
               >
                 <S.imgContent>
