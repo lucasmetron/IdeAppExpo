@@ -1,5 +1,4 @@
 import React from "react";
-import { Text, TouchableOpacity } from "react-native";
 
 import * as S from "./styles";
 
@@ -15,13 +14,11 @@ export default function MainBanner({
   title,
 }: MainBannerProps) {
   return (
-    <TouchableOpacity>
-      <S.container source={{ uri: bannerUrl }}>
-        <S.boxInfo>
-          <S.title numberOfLines={1}>{title}</S.title>
-          <S.author numberOfLines={1}>{author}</S.author>
-        </S.boxInfo>
-      </S.container>
-    </TouchableOpacity>
+    <S.container source={{ uri: bannerUrl }}>
+      <S.boxInfo>
+        <S.title numberOfLines={1}>{title}</S.title>
+        <S.author numberOfLines={1}>{author}</S.author>
+      </S.boxInfo>
+    </S.container>
   );
 }

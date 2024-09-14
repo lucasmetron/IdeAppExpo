@@ -3,8 +3,8 @@ import { createStackNavigator } from "@react-navigation/stack";
 
 import { stacksHome } from "Router/routes";
 import HeaderApp from "components/HeaderApp";
-import Teste from "Views/Teste";
 import Home from "Views/Home";
+import ContentSelected from "Views/ContentSelected";
 
 const StackMore = createStackNavigator();
 
@@ -23,7 +23,10 @@ export default function StackHome() {
       initialRouteName={stacksHome.home}
     >
       <StackMore.Screen name={stacksHome.home} component={Home} />
-      <StackMore.Screen name={stacksHome.teste} component={Teste} />
+      <StackMore.Screen
+        name={stacksHome.contentSelected}
+        component={ContentSelected}
+      />
     </StackMore.Navigator>
   );
 }

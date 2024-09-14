@@ -34,6 +34,7 @@ export default function HeaderApp() {
         return <HeaderDefault route={route} />;
 
       case stacksContent.contentSelected:
+      case stacksHome.contentSelected:
         return <HeaderContent />;
 
       case stacksMore.schedule:
@@ -42,7 +43,6 @@ export default function HeaderApp() {
       case stacksMore.donation:
       case stacksMore.share:
       case stacksMore.talkToUs:
-      case stacksHome.teste:
       case stacksMain.teste:
         return <HeaderDefault route={route} showBackArrow />;
 

@@ -13,7 +13,7 @@ export const tabsRoutes = {
 
 export const stacksHome = {
   home: "stacksHome-Home",
-  teste: "stacksHome-test",
+  contentSelected: "stacksHome-ContentSelected",
 };
 
 export const stacksContent = {
