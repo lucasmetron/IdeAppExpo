@@ -7,18 +7,21 @@ import { stacksContent } from "Router/routes";
 import ContentContext from "context/ContentContext";
 
 interface VitrineContentsProps {
-  title: string;
   data: ContentProps[];
+  title?: string;
 }
 
-export default function VitrineContents({ title, data }: VitrineContentsProps) {
+export default function VitrineContents({
+  data,
+  title = "",
+}: VitrineContentsProps) {
   const navigate: any = useNavigation();
   const { setContentSelected } = useContext(ContentContext);
 
   return (
     <S.container>
       <S.boxContent>
-        <S.title numberOfLines={1}>{title} teste</S.title>
+        {title !== "" && <S.title numberOfLines={1}>{title} teste</S.title>}
         <S.scroll horizontal showsHorizontalScrollIndicator={false}>
           {data.length > 0 &&
             data.map((item, i) => (
