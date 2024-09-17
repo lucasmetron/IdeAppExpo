@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { TouchableOpacity } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { faker } from "@faker-js/faker";
@@ -16,14 +16,13 @@ import { ContentProps } from "types/ContentProps";
 export default function Home() {
   const navigator: any = useNavigation();
   const { setContentSelected } = useContext(HomeContentContext);
-
-  const contentBannerMain: ContentProps = {
+  const [contentBannerMain, setcontentBannerMain] = useState<ContentProps>({
     title: faker.lorem.slug(3),
     content: faker.lorem.paragraph(50),
     img: faker.image.url({ width: 800, height: 500 }),
     subtitle: faker.lorem.slug(2),
     creator: faker.person.fullName(),
-  };
+  });
 
   return (
     <S.container>

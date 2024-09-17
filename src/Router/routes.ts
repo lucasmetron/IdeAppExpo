@@ -14,6 +14,7 @@ export const tabsRoutes = {
 export const stacksHome = {
   home: "stacksHome-Home",
   contentSelected: "stacksHome-ContentSelected",
+  newsWebview: "stacksHome-newsWebview",
 };
 
 export const stacksContent = {
