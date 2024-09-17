@@ -15,7 +15,7 @@ export const container = styled.ImageBackground`
 export const boxInfo = styled.View`
   width: 90%;
   padding: ${RFPercentage(1)}px;
-  background-color: "rgba(0,0,0,0.5)";
+  background-color: "rgba(0,0,0,0.7)";
   border-radius: 5px;
   margin-bottom: ${RFPercentage(3)}px;
 `;

@@ -56,7 +56,9 @@ export default function Home() {
 
       <S.fakeGap />
 
-      <News />
+      <S.boxPadding>
+        <News />
+      </S.boxPadding>
     </S.container>
   );
 }
