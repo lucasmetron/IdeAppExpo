@@ -1,6 +1,12 @@
 import React, { useEffect, useState } from "react";
 import Toast from "react-native-toast-message";
-import { Switch, StyleSheet, Platform } from "react-native";
+import {
+  Switch,
+  StyleSheet,
+  Platform,
+  KeyboardAvoidingView,
+  ScrollView,
+} from "react-native";
 
 import * as S from "./styles";
 import { color } from "styles/pallete";
@@ -51,97 +57,109 @@ export default function AskForPray() {
   }, [typeAsk]);
 
   return (
-    <S.container>
-      <S.inputs>
-        <SelectInput data={typesPray} getOptionPicked={setTypeAsk} />
-        <S.textInput
-          value={dataForm.name}
-          onChangeText={(newText) => {
-            setDataForm((item) => ({ ...item, name: newText }));
-          }}
-          keyboardType="default"
-          placeholder="Nome completo"
-          placeholderTextColor="white"
-          returnKeyType="done"
-        />
+    <KeyboardAvoidingView
+      style={{ flex: 1 }}
+      behavior={Platform.OS === "ios" ? "padding" : "height"} // Define o comportamento para iOS e Android
+      keyboardVerticalOffset={Platform.OS === "ios" ? 130 : 0}
+    >
+      <ScrollView
+        contentContainerStyle={{ flexGrow: 1 }}
+        contentInsetAdjustmentBehavior="automatic"
+        keyboardShouldPersistTaps="handled"
+      >
+        <S.container>
+          <S.inputs>
+            <SelectInput data={typesPray} getOptionPicked={setTypeAsk} />
+            <S.textInput
+              value={dataForm.name}
+              onChangeText={(newText) => {
+                setDataForm((item) => ({ ...item, name: newText }));
+              }}
+              keyboardType="default"
+              placeholder="Nome completo"
+              placeholderTextColor="white"
+              returnKeyType="done"
+            />
 
-        <S.textInput
-          value={dataForm.tel}
-          onChangeText={(newText) => {
-            setDataForm((item) => ({ ...item, tel: newText }));
-          }}
-          keyboardType="numeric"
-          placeholder="Telefone"
-          placeholderTextColor="white"
-          returnKeyType="done"
-        />
+            <S.textInput
+              value={dataForm.tel}
+              onChangeText={(newText) => {
+                setDataForm((item) => ({ ...item, tel: newText }));
+              }}
+              keyboardType="numeric"
+              placeholder="Telefone"
+              placeholderTextColor="white"
+              returnKeyType="done"
+            />
 
-        <S.textInput
-          value={dataForm.email}
-          onChangeText={(newText) => {
-            setDataForm((item) => ({ ...item, email: newText }));
-          }}
-          keyboardType="default"
-          placeholder="Email"
-          placeholderTextColor="white"
-          returnKeyType="done"
-        />
+            <S.textInput
+              value={dataForm.email}
+              onChangeText={(newText) => {
+                setDataForm((item) => ({ ...item, email: newText }));
+              }}
+              keyboardType="default"
+              placeholder="Email"
+              placeholderTextColor="white"
+              returnKeyType="done"
+            />
 
-        <S.textArea
-          value={dataForm.goal}
-          onChangeText={(newText) => {
-            setDataForm((item) => ({ ...item, goal: newText }));
-          }}
-          keyboardType="default"
-          placeholder="Motivo da oração"
-          placeholderTextColor="white"
-          returnKeyType="done"
-          multiline={true}
-          numberOfLines={4}
-        />
+            <S.textArea
+              value={dataForm.goal}
+              onChangeText={(newText) => {
+                setDataForm((item) => ({ ...item, goal: newText }));
+              }}
+              keyboardType="default"
+              placeholder="Motivo da oração"
+              placeholderTextColor="white"
+              returnKeyType="done"
+              multiline={true}
+              numberOfLines={4}
+            />
 
-        <S.toggleWpp>
-          <Switch
-            style={styles.switch}
-            trackColor={{
-              false: color.interface.backgroundColor,
-              true: color.system.success,
-            }}
-            thumbColor={
-              dataForm.canContactByWpp
-                ? color.interface.white
-                : color.interface.white
-            }
-            ios_backgroundColor={color.interface.backgroundColor}
-            onValueChange={() => {
-              setDataForm((obj) => ({
-                ...obj,
-                canContactByWpp: !obj.canContactByWpp,
-              }));
-            }}
-            value={dataForm.canContactByWpp}
-          />
-          <S.toggleText>Permitir contato via Whatsapp</S.toggleText>
-        </S.toggleWpp>
-      </S.inputs>
+            <S.toggleWpp>
+              <Switch
+                style={styles.switch}
+                trackColor={{
+                  false: color.interface.backgroundColor,
+                  true: color.system.success,
+                }}
+                thumbColor={
+                  dataForm.canContactByWpp
+                    ? color.interface.white
+                    : color.interface.white
+                }
+                ios_backgroundColor={color.interface.backgroundColor}
+                onValueChange={() => {
+                  setDataForm((obj) => ({
+                    ...obj,
+                    canContactByWpp: !obj.canContactByWpp,
+                  }));
+                }}
+                value={dataForm.canContactByWpp}
+              />
+              <S.toggleText>Permitir contato via Whatsapp</S.toggleText>
+            </S.toggleWpp>
+          </S.inputs>
 
-      <S.btnContainer>
-        <S.containerBtn>
-          <S.btnRegister
-            canSave={canSave()}
-            onPress={() => {
-              if (canSave()) {
-                console.warn("salvando");
-              } else {
-                showToast();
-              }
-            }}
-          >
-            <S.btnText>Confirmar</S.btnText>
-          </S.btnRegister>
-        </S.containerBtn>
-      </S.btnContainer>
-    </S.container>
+          <S.btnContainer>
+            <S.containerBtn>
+              <S.btnRegister
+                canSave={canSave()}
+                onPress={() => {
+                  if (canSave()) {
+                    console.warn("salvando");
+                  } else {
+                    showToast();
+                  }
+                }}
+              >
+                <S.btnText>Confirmar</S.btnText>
+              </S.btnRegister>
+            </S.containerBtn>
+          </S.btnContainer>
+        </S.container>
+      </ScrollView>
+    </KeyboardAvoidingView>
   );
 }
 
