@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useRoute } from "@react-navigation/native";
 import { SafeAreaView } from "react-native";
 
@@ -14,10 +14,14 @@ import {
 import HeaderMenu from "components/HeaderMenu";
 import HeaderDefault from "components/HeaderDefault";
 import HeaderRegistrationCollege from "components/HeaderRegistrationCollege";
-import HeaderContent from "components/HeaderContent";
+import HeaderWithPersonlizeTitle from "components/HeaderWithPersonlizeTitle";
 import HeaderHomeContent from "components/HeaderHomeContent";
+import ContentContext from "context/ContentContext";
+import NewsContextContext from "context/NewsContext";
 
 export default function HeaderApp() {
+  const { contentSelected } = useContext(ContentContext);
+  const { data: dataAboutNews } = useContext(NewsContextContext);
   const route = useRoute();
 
   function returnHeaderCorrect() {
@@ -35,7 +39,14 @@ export default function HeaderApp() {
         return <HeaderDefault route={route} />;
 
       case stacksContent.contentSelected:
-        return <HeaderContent />;
+        return (
+          <HeaderWithPersonlizeTitle
+            title={contentSelected?.title || "Conteúdo"}
+          />
+        );
+
+      case stacksHome.newsWebview:
+        return <HeaderWithPersonlizeTitle title={dataAboutNews?.title} />;
 
       case stacksHome.contentSelected:
         return <HeaderHomeContent />;

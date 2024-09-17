@@ -5,11 +5,15 @@ import EvilIcons from "react-native-vector-icons/EvilIcons";
 import { RFPercentage } from "react-native-responsive-fontsize";
 
 import * as S from "./styles";
-import ContentContext from "context/ContentContext";
 import { color } from "styles/pallete";
 
-export default function HeaderContent() {
-  const { contentSelected } = useContext(ContentContext);
+interface HeaderWithPersonlizeTitleProps {
+  title?: string;
+}
+
+export default function HeaderWithPersonlizeTitle({
+  title = "IDE",
+}: HeaderWithPersonlizeTitleProps) {
   const navigator = useNavigation();
 
   return (
@@ -22,9 +26,7 @@ export default function HeaderContent() {
         />
       </S.btnGoBack>
 
-      <S.title numberOfLines={1}>
-        {contentSelected?.title || "Contéudo"}
-      </S.title>
+      <S.title numberOfLines={1}>{title}</S.title>
     </S.container>
   );
 }

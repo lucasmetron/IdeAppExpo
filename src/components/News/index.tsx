@@ -1,14 +1,16 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { Text, StyleSheet, ScrollView, Dimensions } from "react-native";
 import { useNavigation } from "@react-navigation/native";
+import { faker } from "@faker-js/faker";
 
 import * as S from "./styles";
 import { NewProps } from "types/NewProps";
-import { faker } from "@faker-js/faker";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import { stacksHome } from "Router/routes";
+import NewsContextContext from "context/NewsContext";
 
 export default function News() {
+  const { setData } = useContext(NewsContextContext);
   const navigation: any = useNavigation();
   const [news, setNews] = useState<NewProps[]>([]);
 
@@ -39,7 +41,10 @@ export default function News() {
         {news.map((item, i) => (
           <TouchableOpacity
             key={item.id}
-            onPress={() => navigation.navigate(stacksHome.newsWebview)}
+            onPress={() => {
+              navigation.navigate(stacksHome.newsWebview);
+              setData(item);
+            }}
           >
             <S.itemNew>
               <S.img source={{ uri: item.img }} resizeMethod="auto" />
