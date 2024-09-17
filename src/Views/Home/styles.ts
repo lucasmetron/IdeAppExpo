@@ -4,7 +4,7 @@ import { RFPercentage } from "react-native-responsive-fontsize";
 import { color } from "styles/pallete";
 import { fontsName } from "styles/fonts";
 
-export const container = styled.SafeAreaView`
+export const container = styled.ScrollView`
   flex: 1;
   background-color: ${color.interface.backgroundColor2};
 `;
@@ -15,7 +15,7 @@ export const fakeGap = styled.SafeAreaView`
   background-color: ${color.interface.backgroundColor2};
 `;
 
-export const boxVitrine = styled.View`
+export const boxPadding = styled.View`
   width: 100%;
   padding-left: ${RFPercentage(1.5)}px;
   padding-right: ${RFPercentage(1.5)}px;

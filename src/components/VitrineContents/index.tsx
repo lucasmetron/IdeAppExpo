@@ -10,6 +10,7 @@ interface VitrineContentsProps {
   navigateTo: string;
   selectFunction: React.Dispatch<React.SetStateAction<ContentProps | null>>;
   title?: string;
+  showSubTitle?: boolean;
 }
 
 export default function VitrineContents({
@@ -17,9 +18,9 @@ export default function VitrineContents({
   navigateTo,
   selectFunction,
   title = "",
+  showSubTitle = true,
 }: VitrineContentsProps) {
   const navigate: any = useNavigation();
-  const { setContentSelected } = useContext(ContentContext);
 
   return (
     <S.container>
@@ -39,9 +40,11 @@ export default function VitrineContents({
                   <S.img resizeMode="cover" source={{ uri: item.img }} />
                 </S.imgContent>
                 <S.titleContent numberOfLines={2}>{item.title}</S.titleContent>
-                <S.subTitleContent numberOfLines={1}>
-                  {item.subtitle}
-                </S.subTitleContent>
+                {showSubTitle && (
+                  <S.subTitleContent numberOfLines={1}>
+                    {item.subtitle}
+                  </S.subTitleContent>
+                )}
               </S.content>
             ))}
         </S.scroll>

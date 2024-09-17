@@ -6,7 +6,7 @@ import { faker } from "@faker-js/faker";
 import * as S from "./styles";
 import { stacksHome } from "Router/routes";
 import MainBanner from "components/MainBanner";
-import YoutubeViewr from "components/YoutubeViewr";
+import YoutubeView from "components/YoutubeView";
 import News from "components/News";
 import VitrineContents from "components/VitrineContents";
 import { data2 } from "Views/Content/objsFake";
@@ -42,17 +42,17 @@ export default function Home() {
 
       <S.fakeGap />
 
-      <S.boxVitrine>
+      <S.boxPadding>
         <VitrineContents
           selectFunction={setContentSelected}
           navigateTo={stacksHome.contentSelected}
           data={data2}
         />
-      </S.boxVitrine>
+      </S.boxPadding>
 
-      <S.fakeGap />
-
-      <YoutubeViewr />
+      <S.boxPadding>
+        <YoutubeView />
+      </S.boxPadding>
 
       <S.fakeGap />
 
