@@ -1,8 +1,10 @@
 import React, { useState } from "react";
-import { Text, Button } from "react-native";
+import { View } from "react-native";
 import { useNavigation } from "@react-navigation/native";
+import AntDesign from "react-native-vector-icons/AntDesign";
 
 import * as S from "./styles";
+import { color } from "styles/pallete";
 
 export default function Login() {
   const [dataForm, setDataForm] = useState({ email: "", password: "" });
@@ -37,7 +39,40 @@ export default function Login() {
           setDataForm((obj) => ({ ...obj, password: text }));
         }}
       />
-      <Button title="voltar" onPress={() => navigation.goBack()} />
+
+      <S.enterBtn backColor={color.interface.darkgray3}>
+        <S.txtBtns colorTxt={color.interface.white}>Entrar</S.txtBtns>
+      </S.enterBtn>
+
+      <S.enterBtn backColor="transparent">
+        <S.txtBtns colorTxt={color.interface.white}>Esqueci a senha</S.txtBtns>
+      </S.enterBtn>
+
+      <S.enterBtn backColor={color.interface.white}>
+        <View
+          style={{
+            flexDirection: "row",
+            alignItems: "center",
+            justifyContent: "center",
+            gap: 8,
+          }}
+        >
+          <AntDesign name="apple1" color={color.interface.black} size={15} />
+          <S.txtBtns colorTxt={color.interface.black}>
+            Continuar com a Apple
+          </S.txtBtns>
+        </View>
+      </S.enterBtn>
+
+      <S.backBtn onPress={() => navigation.goBack()}>
+        <AntDesign name="close" color={color.interface.white} size={25} />
+      </S.backBtn>
+
+      <S.notYetRegister>
+        <S.notYetRegisterTxt>
+          Ainda não tem cadastro? Cadastre-se
+        </S.notYetRegisterTxt>
+      </S.notYetRegister>
     </S.container>
   );
 }
