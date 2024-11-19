@@ -50,7 +50,7 @@ export default function CoursesCollegeAvaliable() {
   }
 
   return (
-    <S.loadContainer>
+    <S.container>
       {courserCollege.length === 0 ? (
         <S.noCoursesConteiner>
           <S.noCoursesText>Não há cursos disponíveis</S.noCoursesText>
@@ -73,7 +73,7 @@ export default function CoursesCollegeAvaliable() {
           />
         </>
       )}
-    </S.loadContainer>
+    </S.container>
   );
 }
 

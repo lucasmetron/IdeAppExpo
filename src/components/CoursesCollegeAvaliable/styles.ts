@@ -4,7 +4,7 @@ import { RFPercentage } from "react-native-responsive-fontsize";
 import { color } from "../../styles/pallete";
 import { fontsName } from "styles/fonts";
 
-export const loadContainer = styled.SafeAreaView`
+export const container = styled.SafeAreaView`
   flex: 1;
   align-items: center;
   justify-content: flex-start;
@@ -54,7 +54,7 @@ export const imgBox = styled.View`
 export const infos = styled.View`
   flex: 6;
   width: 100%;
-  gap: 3px;
+  gap: ${RFPercentage(0.4)}px;
 `;
 
 export const initialDate = styled.Text`
