@@ -13,15 +13,22 @@ export const container = styled.View`
   gap: ${RFPercentage(1)}px;
 `;
 
+export const Scroll = styled.ScrollView`
+  flex: 1;
+`;
+
 export const imgCourseContainer = styled.View`
   width: 100%;
   height: ${Dimensions.get("window").height * 0.3}px;
   background-color: ${color.interface.backgroundColor2};
+  align-items: center;
+  justify-content: center;
 `;
 
 export const imgCourse = styled.Image`
   width: 100%;
   height: 100%;
+  object-fit: fill;
 `;
 
 export const infosContainer = styled.View`
@@ -62,10 +69,6 @@ export const btnText = styled.Text`
   color: ${color.interface.white};
   font-size: ${RFPercentage(2)}px;
   font-family: ${fontsName.title};
-`;
-
-export const Scroll = styled.ScrollView`
-  flex: 1;
 `;
 
 export const titleCourse = styled.Text`
