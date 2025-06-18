@@ -35,6 +35,7 @@ export default function Tabs() {
       <StackMore.Screen name={stacksMore.donation} component={Donation} />
       <StackMore.Screen name={stacksMore.share} component={Share} />
       <StackMore.Screen name={stacksMore.talkToUs} component={TalkWithUs} />
+      <StackMore.Screen name={stacksMore.chat} component={FakeWhatsApp} />
     </StackMore.Navigator>
   );
 }

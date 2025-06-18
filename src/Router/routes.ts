@@ -34,5 +34,6 @@ export const stacksMore = {
   askForPray: "stacksMore-Pedido de oração",
   donation: "stacksMore-Doações",
   share: "stacksMore-Compartilhar",
+  chat: "stacksMore-chat",
   talkToUs: "stacksMore-Fale Conosco",
 };

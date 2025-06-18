@@ -38,4 +38,10 @@ export const list: ItemListProps[] = [
     name: "Fale Conosco",
     route: stacksMore.talkToUs,
   },
+  {
+    id: "7",
+    icon: "chat",
+    name: "Chat",
+    route: stacksMore.chat,
+  },
 ];

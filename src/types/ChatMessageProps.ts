@@ -1,4 +1,5 @@
 export interface ChatMessageProps {
+  id: string;
   urlAvatar: string;
   name: string;
   message: string;

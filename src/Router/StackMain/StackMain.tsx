@@ -15,7 +15,7 @@ export default function StackMain() {
       screenOptions={{
         headerShown: false,
       }}
-      initialRouteName={stacksMain.fakeWhatsApp}
+      initialRouteName={stacksMain.tabs}
     >
       <StackMainCreator.Screen name={stacksMain.tabs} component={Tabs} />
       <StackMainCreator.Screen name={stacksMain.login} component={Login} />

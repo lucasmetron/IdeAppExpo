@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Text } from "react-native";
+import { Button, FlatList, TouchableOpacity } from "react-native";
 import Feather from "react-native-vector-icons/Feather";
 import Entypo from "react-native-vector-icons/Entypo";
 import { RFPercentage } from "react-native-responsive-fontsize";
@@ -15,15 +15,20 @@ export default function FakeWhatsApp() {
   return (
     <S.container>
       <S.header>
-        <S.title>LucasApp</S.title>
+        <S.title>ChatApp</S.title>
 
         <S.icons>
-          <Feather name="camera" size={RFPercentage(2.5)} color={"white"} />
-          <Feather
-            name="more-vertical"
-            size={RFPercentage(2.5)}
-            color={"white"}
-          />
+          <TouchableOpacity>
+            <Feather name="camera" size={RFPercentage(2.5)} color={"white"} />
+          </TouchableOpacity>
+
+          <TouchableOpacity>
+            <Feather
+              name="more-vertical"
+              size={RFPercentage(2.5)}
+              color={"white"}
+            />
+          </TouchableOpacity>
         </S.icons>
       </S.header>
 
@@ -36,7 +41,12 @@ export default function FakeWhatsApp() {
         <S.researchText>Pergunte à Meta AI ou pesquise</S.researchText>
       </S.researchChat>
 
-      <PersonOnListChat person={chatMessages[0]} />
+      <FlatList
+        data={chatMessages}
+        keyExtractor={(item) => item.id}
+        renderItem={({ item }) => <PersonOnListChat person={item} />}
+        style={{ width: "100%" }}
+      />
 
       <Button title="voltar" onPress={() => navigation.goBack()} />
     </S.container>
