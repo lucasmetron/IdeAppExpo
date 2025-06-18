@@ -35,12 +35,17 @@ export const icons = styled.View`
 export const researchChat = styled.View`
   width: 95%;
   flex-direction: row;
-  border-radius: 20px;
   align-items: center;
-  justify-content: flex-start;
+  background-color: #3a3a3a;
+  padding: ${RFPercentage(1)}px;
+  border-radius: 20px;
   gap: ${RFPercentage(1)}px;
-  padding: ${RFPercentage(1.5)}px;
-  background-color: #2e2f2f;
+`;
+
+export const researchInput = styled.TextInput`
+  flex: 1;
+  color: white;
+  font-size: ${RFPercentage(2)}px;
 `;
 
 export const researchText = styled.Text`

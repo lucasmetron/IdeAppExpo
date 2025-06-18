@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useLayoutEffect, useState } from "react";
 import { FlatList, TouchableOpacity } from "react-native";
 import Feather from "react-native-vector-icons/Feather";
 import Entypo from "react-native-vector-icons/Entypo";
@@ -9,6 +9,26 @@ import PersonOnListChat from "components/PersonOnListChat";
 import { chatMessages } from "./fakeList";
 
 export default function FakeWhatsApp() {
+  const [listPersons, setListPersons] = useState(chatMessages);
+  console.log("listPersons: ", listPersons);
+  const [valueToSearch, setValueToSearch] = useState("");
+  console.log("valueToSearch: ", valueToSearch);
+
+  function filterList() {
+    return chatMessages.filter((item) =>
+      item.name.toLowerCase().includes(valueToSearch.toLowerCase())
+    );
+  }
+
+  useLayoutEffect(() => {
+    if (valueToSearch === "") {
+      setListPersons(chatMessages);
+    } else {
+      console.log("cai no filter");
+      setListPersons(filterList());
+    }
+  }, [valueToSearch]);
+
   return (
     <S.container>
       <S.header>
@@ -35,11 +55,16 @@ export default function FakeWhatsApp() {
           size={RFPercentage(2.5)}
           color={"#e0e0e0"}
         />
-        <S.researchText>Pergunte à Meta AI ou pesquise</S.researchText>
+        <S.researchInput
+          value={valueToSearch}
+          onChangeText={setValueToSearch}
+          placeholder="Pesquise ou pergunte à Meta AI"
+          placeholderTextColor="#e0e0e0"
+        />
       </S.researchChat>
 
       <FlatList
-        data={chatMessages}
+        data={listPersons}
         keyExtractor={(item) => item.id}
         renderItem={({ item }) => <PersonOnListChat person={item} />}
         style={{ width: "100%" }}
