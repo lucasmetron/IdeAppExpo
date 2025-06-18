@@ -13,12 +13,19 @@ export default function PersonOnListChat({ person }: PersonOnListProps) {
     return date.split(" ")[1] || "erro";
   }
 
+  function cutString(text: string, qtd: number) {
+    if (text.length > qtd) {
+      return text.substring(0, 25) + "...";
+    }
+    return text;
+  }
+
   return (
     <S.container>
       <S.photo src={person.urlAvatar} />
       <S.dataAboutUser>
         <S.name>{person.name}</S.name>
-        <S.message>{person.message}</S.message>
+        <S.message>{cutString(person.message, 25)}</S.message>
 
         <S.time>{returnHour(person.sent)}</S.time>
       </S.dataAboutUser>

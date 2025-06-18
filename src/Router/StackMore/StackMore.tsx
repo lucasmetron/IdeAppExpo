@@ -16,14 +16,13 @@ const StackMore = createStackNavigator();
 
 export default function Tabs() {
   function isShowHeaderApp(nameRoute: string) {
-    console.log("nameRoute: ", nameRoute);
     return nameRoute.includes("stacksMore-") ? <HeaderApp /> : null;
   }
 
   return (
     <StackMore.Navigator
       screenOptions={{
-        header: ({ route }) => {
+        header: ({ route }: any) => {
           return isShowHeaderApp(route.name);
         },
       }}

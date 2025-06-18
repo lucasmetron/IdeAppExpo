@@ -14,8 +14,8 @@ export const container = styled.TouchableOpacity`
 `;
 
 export const photo = styled.Image`
-  border-radius: 50%;
-  width: ${Dimensions.get("window").height * 0.05};
+  border-radius: 50px;
+  width: ${Dimensions.get("window").height * 0.05}px;
   height: 100%;
 `;
 
