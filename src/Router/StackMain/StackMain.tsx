@@ -5,7 +5,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { stacksMain } from "Router/routes";
 import Tabs from "Router/Tabs";
 import Login from "Views/Login";
-import Teste from "Views/Teste";
+import FakeWhatsApp from "Views/FakeWhatsApp";
 
 const StackMainCreator = createStackNavigator();
 
@@ -15,11 +15,14 @@ export default function StackMain() {
       screenOptions={{
         headerShown: false,
       }}
-      initialRouteName={stacksMain.tabs}
+      initialRouteName={stacksMain.fakeWhatsApp}
     >
       <StackMainCreator.Screen name={stacksMain.tabs} component={Tabs} />
       <StackMainCreator.Screen name={stacksMain.login} component={Login} />
-      <StackMainCreator.Screen name={stacksMain.teste} component={Teste} />
+      <StackMainCreator.Screen
+        name={stacksMain.fakeWhatsApp}
+        component={FakeWhatsApp}
+      />
     </StackMainCreator.Navigator>
   );
 }

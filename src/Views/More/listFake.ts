@@ -1,4 +1,4 @@
-import { stacksMore } from "Router/routes";
+import { stacksMore, stacksMain } from "Router/routes";
 import { ItemListProps } from "types/ItemMoreProps";
 
 export const list: ItemListProps[] = [
