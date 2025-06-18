@@ -5,7 +5,7 @@ import { RFPercentage } from "react-native-responsive-fontsize";
 
 export const container = styled.TouchableOpacity`
   width: 100%;
-  height: ${Dimensions.get("window").height * 0.08};
+  height: ${Dimensions.get("window").height * 0.08}px;
   flex-direction: row;
   align-items: center;
   justify-content: center;

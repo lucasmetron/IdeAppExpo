@@ -10,9 +10,8 @@ import { chatMessages } from "./fakeList";
 
 export default function FakeWhatsApp() {
   const [listPersons, setListPersons] = useState(chatMessages);
-  console.log("listPersons: ", listPersons);
+
   const [valueToSearch, setValueToSearch] = useState("");
-  console.log("valueToSearch: ", valueToSearch);
 
   function filterList() {
     return chatMessages.filter((item) =>
@@ -24,7 +23,6 @@ export default function FakeWhatsApp() {
     if (valueToSearch === "") {
       setListPersons(chatMessages);
     } else {
-      console.log("cai no filter");
       setListPersons(filterList());
     }
   }, [valueToSearch]);
@@ -58,7 +56,7 @@ export default function FakeWhatsApp() {
         <S.researchInput
           value={valueToSearch}
           onChangeText={setValueToSearch}
-          placeholder="Pesquise ou pergunte à Meta AI"
+          placeholder="Pesquise"
           placeholderTextColor="#e0e0e0"
         />
       </S.researchChat>
