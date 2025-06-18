@@ -57,7 +57,8 @@ export default function HeaderApp() {
       case stacksMore.donation:
       case stacksMore.share:
       case stacksMore.talkToUs:
-      case stacksMain.teste:
+      case stacksMore.chat:
+      case stacksMain.fakeWhatsApp:
         return <HeaderDefault route={route} showBackArrow />;
 
       case stacksCollege.registrationCollege:

@@ -5,6 +5,7 @@ import { RFPercentage } from "react-native-responsive-fontsize";
 
 export const container = styled.View`
   flex: 1;
+  padding-top: 10px;
   align-items: center;
   justify-content: flex-start;
   gap: ${RFPercentage(1)}px;

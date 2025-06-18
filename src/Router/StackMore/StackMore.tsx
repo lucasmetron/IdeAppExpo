@@ -16,6 +16,7 @@ const StackMore = createStackNavigator();
 
 export default function Tabs() {
   function isShowHeaderApp(nameRoute: string) {
+    console.log("nameRoute: ", nameRoute);
     return nameRoute.includes("stacksMore-") ? <HeaderApp /> : null;
   }
 
