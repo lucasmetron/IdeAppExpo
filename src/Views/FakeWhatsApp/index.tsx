@@ -1,7 +1,6 @@
 import React, { useLayoutEffect, useState } from "react";
 import { FlatList, TouchableOpacity } from "react-native";
-import Feather from "react-native-vector-icons/Feather";
-import Entypo from "react-native-vector-icons/Entypo";
+import { Feather, Entypo } from "@expo/vector-icons";
 import { RFPercentage } from "react-native-responsive-fontsize";
 
 import * as S from "./styles";
